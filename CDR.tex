@@ -1,0 +1,427 @@
+\documentclass[11pt]{article}
+\usepackage{ROSPINCanSat, lipsum, xcolor}
+\cansatstyle
+
+\title{Guidelines for the Critical Design Report
+}
+\author{Team: ROSPIN}
+\date{March 01, 2023}
+
+\begin{document}
+
+\cansattitle
+
+
+%%%%%%%%%% INTRO PAGE - DELETE BEFORE SUBMISSION %%%%%%%%%%%
+
+The process of building a satellite is very complex and costly. That is why, in a real satellite mission, before, during, and after the satellite is built, these documents provide detailed information about the satellite being developed and ensure that it complies with all the requirements regarding the mission and the launch environment.
+
+The process of designing and building a CanSat is much simpler than the one followed for a satellite. Nevertheless, we believe that exposing students to good engineering procedures will be very beneficial for their educational experience.
+
+These guidelines provide information about the expected content of each \textbf{Critical Design Report (CDR)} chapter. 
+This information will ensure that your work is aligned with your mission goals and can help us identify possible problems at an early stage. 
+It will also allow us to determine that your CanSat will be able to fly according to the mechanical and safety requirements.
+
+Attached to this document, there is a sample design document with a given structure that you can use to describe all the aspects of your CanSat project. 
+Your report should be no longer than \textbf{30 pages}, not including appendices and references. Appendices should be used for detailed information 
+to keep the document's main body as concise as possible. This detailed information may be, e.g., details of scientific background, technical drawings, or 
+component datasheets. The documentation should be written clearly and concisely, allowing a person who does not know the experiment to understand its purpose and design.
+
+The design document should provide the JURY with all the relevant information regarding the experiment. 
+During all experiment phases, the design document is the only documentation for describing the experiment in detail. 
+Additional sections can be added by the team if appropriate. However, the present sections should be included in your CDR for reference. The design document will be the main evaluating criteria for the Romanian CanSat and Rocketry Competition jury.
+
+\vspace{3cm}
+{\Large{\textbf{Note:} Do not include this page in your Report!}}
+%%%%%%%%%% END OF INTRO PAGE - DELETE BEFORE SUBMISSION %%%%%%%%%%%
+
+
+\newpage
+
+\tableofcontents
+\pagestyle{plain}
+
+\newpage
+\section{Progress report}
+
+In general, a progress report should convey the following information:
+\begin{enumerate}
+    \item The work that has been completed.
+    \item The work that is in progress.
+    \item The work that remains to be done.
+    \item Any problems, complications, or other issues you have encountered.
+    \item A general overview of how the project is going.
+\end{enumerate}
+
+
+The progress report will consist of 4 parts:
+\begin{enumerate}
+    \item Progress statement for your online profile (1-2 paragraphs)
+    \item Task list
+    \item Detailed project status
+    \item Your updated Design Document
+\end{enumerate}
+
+\subsection{New progress statement for the team profile}
+The progress statement should consist of 1-2 paragraphs (max) and is intended for your online profile page. This is a general statement to give the public an idea of how things are going with your project. (More detailed information intended for the JURY should be put into the “Project Status” section)
+
+\subsection{Tasks list}
+
+In the “Task List” section, you should break down the project work into a list of individual tasks and indicate which ones have been completed, which ones are in progress, and which ones remain to be done.
+
+\coloredbox{gray}{black}{
+\[
+\begin{tabular}{lccc}
+
+{\color{blue}\textbf{In progress}} & \multicolumn{3}{l}{\textbf{High level task 1.}}\\
+ & {\color{blue}\textbf{In progress}} & \multicolumn{2}{l}{\textbf{Lower level task 1.1}}\\
+ & & {\color{green}\textbf{Done}} & specific task 1.1.1\\
+ & & {\color{green}\textbf{Done}} & specific task 1.1.2\\
+ & & {\color{blue}\textbf{In progress}} & specific task 1.1.3\\
+ & & {\color{red}\textbf{Not done}} & specific task 1.1.4\\
+ & & {\color{blue}\textbf{In progress}} & specific task 1.1.5 \\
+ & & {\color{red}\textbf{Not done}} & specific task 1.1.6\\
+ & {\color{green}\textbf{Done}} & \textbf{Lower level task 1.2 }&\\
+ & & {\color{green}\textbf{Done}} & specific task 1.2.1\\
+ & & {\color{green}\textbf{Done}} & specific task 1.2.2\\
+ & & {\color{green}\textbf{Done}} & specific task 1.2.3\\
+ {\color{red}\textbf{Not done}}& \multicolumn{3}{l}{\textbf{High level task 2}}\\
+ & {\color{red}\textbf{Not done}} & \textbf{Lower level task 2.1}&\\
+ & & {\color{red}\textbf{Not done}} & specific task 2.1.1\\
+ & & {\color{red}\textbf{Not done}} & specific task 2.1.2\\
+\end{tabular}
+\]
+}
+
+\subsection{Detailed project status}
+In the “Detailed Project Status” section, write any comments you have about any specific issues you are having, and let us know how the project is going in general.
+
+Although there is no minimum length for this section, we encourage you to go more in-depth here than with the progress statement for your online profile page. Feel free to go into details.
+%\vspace{0.5cm}
+\coloredbox{gray}{black}{
+\textbf{Note: } As your project progresses, you should constantly update your design document to reflect the work you have done. We will therefore use both the Progress Report and the current version of your Design Document to help us gauge your overall progress. When completing an interim design document, fill in as much information as possible based on the project's current status. The Progress Report is not meant to replace the “Project Planning” chapter of the Design Document.}
+
+{\color{red}\textbf{IMPORTANT: Do not copy/paste any indications written by us on how to complete this report!}}
+
+\vspace{1cm}
+{\color{red}\textbf{IMPORTANT: The "Introduction" must be the same as the PDR's Introduction. However, other sections should be updated according to the current status of the project.}}
+\section{Introduction}
+
+\subsection{Purpose of the mission}
+Explain the overall goal of the CanSat mission and provide a brief background on why the mission is important and the potential impact of the data collected.
+
+\subsection{Team organisation and roles}
+Each team must present their team, organisation, previous experience, activity, etc.
+\begin{itemize}
+    \itemsep 0em
+    \item {\bf Team Name:} Some words about the chosen team name.
+    \item {\bf Team Composition:} A description of all team members and their roles. Include their:
+    \setlength{\itemsep}{0em}
+    \begin{itemize}
+      \itemsep 0em
+      \item {\em Previous Experience:} Short information/description about previous similar experiences (if any)
+      \item {\em Background, path they follow if applicable (pure sciences, maths, etc.), and interests (e.g., physics, computer science, mechanical engineering, etc.).}
+      \item {\em Field of work within the team, giving details of tasks}
+      \item {\em Expected workload within the team (in general terms)}
+      \item {\em Hours dedicated}
+    \end{itemize}
+    \item {\bf Team's Activity:} How the team intends to meet and progress in the CanSat design and development
+\end{itemize}
+
+\subsection{Mission objectives}
+
+This chapter outlines the objectives and goals of the CanSat mission, as well as the secondary mission that the team has selected. It also defines the criteria that must be met in order for the CanSat launch to be considered successful. Additionally, it describes the research expectations and the specific measurements, investigations, and tests that will be conducted.
+\begin{enumerate}
+  \item {\bf Describe your secondary mission and the reasons why you selected that mission.} Explain the secondary mission selected by the team, along with the reasons for its selection. This could include additional objectives such as testing the CanSat's recovery system or investigating a specific aspect of the design or functionality of the CanSat.
+  \item {\bf Define which objectives should be reached in order for the CanSat launch to be considered successful.} Objectives that must be met in order for the CanSat launch to be considered successful are defined. These objectives may include the successful collection and transmission of data, the successful deployment and recovery of the CanSat, and the CanSat's ability to withstand the stress of launch and landing.
+  \item {\bf What result do you expect from your research?} Research expectations are outlined, including the knowledge and understanding that the team hopes to gain from the mission. This could include a better understanding of the challenges involved in designing and building a CanSat, the importance of recovery systems in satellite missions, and the data collection, transmission, and analysis process.
+  \item {\bf What are you going to measure/investigate/test?} Specific measurements, investigations, and tests that will be conducted during the mission are described. These could include testing the CanSat's recovery system using different methods, evaluating the performance of the communication system, and measuring temperature, pressure, and altitude using sensors.
+\end{enumerate}
+
+
+\section{CanSat description}
+This chapter provides an overview of how the CanSat mission will be carried out. It outlines the key elements that will be used to accomplish the mission objectives, including sensors, cameras, and materials to be tested. Additionally, it provides a block diagram that is not completed, and the team should fill it in with all the functional and/or physical blocks of the experiment and describe in general terms how these elements interact without providing any technical detail.
+
+\subsection{Mission overview}
+This chapter provides an overview of how the CanSat mission will be carried out. It outlines the key elements that will be used to accomplish the mission objectives, including sensors, cameras, and materials to be tested. 
+
+\coloredbox{gray}{black}{
+    { {\it Example:}
+    
+     The mission will be carried out by designing and building a CanSat that will be launched and deployed from a rocket at an altitude of about 450 meters. The CanSat is to descend no faster than 4.6 meters per second. Once landed, the CanSat will measure the soil surface temperature and record the data every 5 minutes for two hours minimum. Key elements that will be used to accomplish the mission objectives include:
+    \begin{itemize}
+      \item Sensors for measuring temperature, pressure, and altitude
+      \item A radio transmitter for sending data back to the ground station
+      \item A recovery system for safely returning the CanSat to the ground
+      \item A communication system for maintaining contact with the ground station
+    \end{itemize}
+    }
+}
+
+Keep in mind that the mission overview provided is just an example and not related to the actual mission that the team will be performing.
+
+Additionally, a block diagram will be provided as a reference for the team to fill in with all the functional and/or physical blocks of the experiment. The team should describe how these elements interact in general terms without providing any technical details.
+
+It's important to note that the mission overview should not include any specific design choices.
+
+
+\subsection{Mechanical / structural design}
+This chapter provides a detailed description of the CanSat's mechanical design and the materials used for its structure. It identifies the major components of the CanSat, including the main board, sensors, transmitter, and battery. It includes a preliminary drawing of how the CanSat structure will look and where the major components will be placed. Mechanical drawings and a list of parts, including sensors used, are provided. This subchapter explains the purpose of each component of the CanSat and how they work together to accomplish the mission objectives.
+
+\coloredbox{gray}{black}{
+    { {\it Example:}
+
+{\textbf {1. Mechanical Design:}} The CanSat structure is made of lightweight aluminium, which provides strength and durability while keeping the overall weight of the CanSat low. The structure has been designed to withstand the stress of launch and landing and includes a removable top for easy access to the interior components. The components are mounted to the structure using screws and standoffs to provide a secure and stable platform for the electronic components.
+
+{\textbf {2. Components:}} The major components of the CanSat include the main board, sensors, transmitter, and battery. The main board houses the microcontroller and provides the interface between the sensors and the transmitter. The sensors include a temperature sensor, a pressure sensor, and an altitude sensor. The transmitter is used to send data back to the ground station. The battery provides power to the CanSat during the flight.
+
+{\textbf {3. Placement:}} The main board is mounted to the top of the CanSat structure, with the sensors and transmitter located adjacent to it. The battery is mounted to the bottom of the structure. The CanSat structure has been designed to minimize the overall size and weight of the CanSat, while still providing ample space for the electronic components.
+
+{\textbf {4. Drawings:}} Mechanical drawings of the CanSat structure, including the placement of the major components, will be provided. A list of parts, including the sensors used, will also be provided.
+
+{\textbf {5. Explanation:}} The main board acts as the central controller for the CanSat, processing sensor data and controlling the transmitter. The temperature sensor measures the temperature of the environment, the pressure sensor measures the pressure at the CanSat's location, and the altitude sensor measures the altitude of the CanSat. The transmitter is used to send the sensor data back to the ground station. The battery provides power to the CanSat during the flight.}
+}
+
+\subsection{Electrical design}
+This subchapter provides an overview of the electrical interface of the CanSat, including the selected components and their usage. It includes electronic drawings that provide a visual representation of the electrical connections and components. If applicable, this subchapter also describes the usage of the RF link, including the data rate of the downlink, protocol, and data rate of the uplink. A power budget is provided, detailing each component's power consumption and the capacity of the battery. An estimation of the power consumption and the duration of the batteries is also included. If batteries are used, their type and number is specified.
+
+\coloredbox{gray}{black}{
+    {{\it Example:}
+    
+{\textbf {1. Electrical Interface:}} The CanSat's electrical interface is designed to provide a robust and reliable connection between the various electronic components. The main board acts as the central hub for the electrical interface, providing power and data connections to the sensors, transmitter, and other components. An electronic drawing is provided to show the layout and connections of the electronic components.
+
+{\textbf {2. RF Link:}} The CanSat uses an RF link for data communication with the ground station. The data rate of the downlink is 9600 bps and the protocol used is UART. The data rate of the uplink is also 9600 bps.
+}}
+\coloredbox{gray}{red}{
+{\textbf {3. Power Budget:}} The power budget for the CanSat is as follows:
+\begin{itemize}
+  \item Main board: 0.5W
+  \item Sensors: 0.2W
+  \item Transmitter: 1W
+  \item Battery: 4.2Ah
+\end{itemize}
+{\textbf {4. Power Consumption and Duration:}} The total power consumption of the CanSat is estimated to be 1.9W. The battery has a capacity of 4.2Ah, which should provide enough power for the CanSat to operate for at least 2 hours.
+
+{\textbf {5. Battery:}} The CanSat uses a lithium-ion battery with a capacity of 4.2Ah. The number of batteries used is 1.
+}
+
+
+\subsection{Software design}
+This subchapter covers the design of the CanSat's software and its expected functionality. It provides a detailed description of the On-Board Data Handling (OBDH) system and its role in the CanSat's operation. A flow diagram of the software program flow is included, along with an explanation of any different software modes that may be used. The amount of data gathered and its storage or transfer to the ground segment is also discussed. The programming languages and development environments used to create the software are identified in this subchapter.
+
+\coloredbox{gray}{black}{
+    {{\it Example:}
+    
+{\textbf {1. Software Design:}} The CanSat's software is designed to control the various electronic components and manage the data collected by the sensors. The main board microcontroller runs the software and controls the sensors, transmitters, and other components. The On-Board Data Handling (OBDH) system is responsible for collecting, processing, and storing the data from the sensors and controlling the transmitter to send data to the ground station.
+
+{\textbf {2. Software Program Flow:}} A flow diagram of the software program flow is provided. The program starts by initialising the various components and setting the system into an idle state. Then the sensors are read, and their data is processed and stored. The transmitter is then activated to send the data to the ground station. The system then returns to the idle state, waiting for the next data collection cycle.
+
+{\textbf {3. Software Modes:}} The CanSat's software has two modes of operation: data collection mode and transmission mode. Data collection mode is responsible for collecting data from the sensors, processing, and storing it. Transmission mode is responsible for sending the stored data to the ground station.
+
+{\textbf {4. Data Gathering and Storage:}} The CanSat is expected to gather approximately 100 KB of data per flight. The data is stored onboard the CanSat in a non-volatile memory and is transferred to the ground station in real-time through the RF link.
+
+{\textbf {5. Programming Language and Development Environment:}} The CanSat software is written in C programming language and is developed using the Atmel Studio development environment.}
+}
+
+
+\subsection{Recovery system}
+This chapter provides a brief overview of the recovery system used in the CanSat mission, including the method used to fix it to the CanSat structure. A picture of the design may be included. Additionally, the chapter estimates the expected flight time for the CanSat.
+
+\coloredbox{gray}{black}{
+    {{\it Example:}
+    
+{\textbf {1. Description:}} The CanSat's recovery system is designed to ensure a safe and controlled descent back to the ground after the mission is complete. It consists of a parachute that is deployed once the CanSat reaches a certain altitude. The parachute is connected to the CanSat structure using a harness that is made of durable nylon straps. The harness is designed to distribute the load evenly across the CanSat structure, ensuring that it can withstand the stresses of the descent.
+
+{\textbf {2. Method of Attachment:}} The recovery system is attached to the CanSat structure using a series of straps and buckles. The straps are secured to the structure using screws, providing a secure and stable attachment point for the recovery system. The parachute is connected to the harness using a series of snaps and D-rings.
+
+{\textbf {3. Picture:}} A picture of the recovery system design is provided for reference. It shows the CanSat structure with the recovery system attached and the parachute deployed.
+
+{\textbf {4. Expected Flight Time:}} The CanSat's estimated flight time is 20 minutes, including the time for the CanSat to reach its maximum altitude and the time for the recovery system to bring it safely back to the ground.}
+}
+
+
+\subsection{Ground support equipment}
+This chapter describes the equipment that is a part of the CanSat mission but does not fly on the rocket. This typically includes the ground segment, which may consist of one or several computers that receive data from the experiment, a radio receiver, etc. The software design of the ground segment is also discussed, including the handling of received data. Additionally, the chapter includes information on the transmitter frequency that will be used for data transmission and reception between the CanSat and the ground station.
+
+\coloredbox{gray}{black}{
+    {{\it  Example:}
+    
+{\textbf {1. Equipment:}} The ground support equipment for the CanSat mission includes a computer, a radio receiver, and an antenna. The computer is used to receive and process the data sent from the CanSat, and the radio receiver is used to receive the data transmissions from the CanSat. The antenna is used to transmit and receive the data signals.
+
+{\textbf {2. Software Design:}} The ground segment software is designed to receive and process the data sent from the CanSat. The software is responsible for collecting the data from the radio receiver, storing it, and displaying it in a user-friendly format. The software also provides functionality to analyse and visualise the data.
+
+{\textbf {3. Data Handling:}} The received data is stored in a file format that can be easily read and processed by the software. The software provides functionality to visualise the data in various formats, such as graphs and charts. The software also allows the data to be exported to other formats for further analysis.
+
+{\textbf {4. Transmitter Frequency:}} The transmitter frequency that will be used for data transmission and reception between the CanSat and the ground station is 434 MHz.
+
+{\textbf {5. Ground Segment:}} The ground segment is responsible for receiving and processing data from the CanSat and providing real-time telemetry and command capabilities. The ground segment also provides a user-friendly interface for the operators to control and monitor the CanSat and its mission status.}
+}
+
+
+\section{Project planning}
+\subsection{Time schedule of the CanSat preparation}
+This schedule should clearly outline the {\bf specific tasks} and milestones that need to be achieved, including a detailed breakdown of the specific activities required, the resources needed, and the timeline for completion with specific dates for each task or milestone.
+
+This can include everything from designing and building the CanSat hardware and software to testing and launching the CanSat, and analysing and reporting on the data collected during the mission.
+This chapter serves as a roadmap for the team to follow during the preparation and execution of the CanSat mission.
+Additionally, the schedule should also include {\bf contingencies} and {\bf risk management} plans to account for any unexpected delays or problems that may arise during the project.
+Some of the key milestones in the schedule might include:
+\begin{itemize}
+    \item Preliminary Design Review
+    \item Critical Design Review
+    \item Fabrication
+    \item Integration and Testing
+    \item Launch/Mission
+    \item Data Analysis and Report
+\end{itemize}
+
+It is important to keep in mind that the schedule may change as the project progresses and that it should be updated regularly to reflect the project's current status and any changes that have been made to the plan.
+
+
+\subsection{Resource estimation}
+This chapter provides an estimation of the resources required for the CanSat mission, including materials, equipment, and personnel. It also includes a budget for the mission, detailing the expected costs of each item. This chapter serves as a guide for the team to manage and allocate resources effectively throughout the preparation and execution of the CanSat mission.
+
+\subsubsection{Budget}
+The table below lists all the foreseen costs for the CanSat mission. The costs include the components used for the Cansat, as well as any additional materials, equipment, and personnel required for the mission.
+
+\[
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Component} & \textbf{Cost (€)} \\
+\hline
+Structure (Metallic parts and structural shields) & 15 \\
+Transmitter board & 25 \\
+Controller board & 40 \\
+Sensor board (Including all the provided sensors and electronic components) & 15 \\
+Additional materials & 50 \\
+Additional equipment & 50 \\
+Personnel & 50 \\
+Launch site fees & 50 \\
+\hline
+\textbf{Total budget} & \textbf{245} \\
+\hline
+\end{tabular}
+\]
+The above budget is for demonstration purposes only and the cost may vary depends on the exact materials and equipment used for the mission. The team should review and update the budget as necessary throughout the mission.
+
+\subsubsection{External support}
+This section lists the organisations, departments, or companies that provide sponsorship or in-kind support for the CanSat mission. This includes professors from a university or institute, local companies or nearby research laboratories, facilities to which access is possible, etc. It also mentions any support or expertise that is lacking and that needs to be obtained for the successful completion of the mission. This subchapter serves as a guide for the team to identify potential partners and resources that can support the mission and to plan for any missing resources.
+
+\coloredbox{gray}{black}{
+    {{\it Example:}
+
+The CanSat mission receives sponsorship and in-kind support from the following organisations, departments or companies:
+\begin{itemize}
+\item \textbf{XYZ University:} Professors from the Electrical Engineering department provide technical expertise and guidance for the CanSat mission.
+\item \textbf{ABC Corporation:} This local company provides financial support for the mission, as well as access to their state-of-the-art manufacturing facilities for the construction of the CanSat.
+\item \textbf{DEF Research Laboratory:} This nearby research laboratory provides access to their testing facilities for the CanSat mission.
+\item \textbf{GHI Aerospace:} This company provides in-kind support for the mission by donating the rocket for the CanSat launch.
+\end{itemize}
+
+The team is currently lacking support in the area of aerodynamics and wind tunnel testing. The team is in the process of reaching out to organisations and experts in the field to obtain the necessary support for these tests.}
+}
+
+\subsection{Test plan}
+This section describes all the tests that will be performed to verify that the CanSat can carry out both the primary and secondary missions. It includes a detailed description of the test procedures, the equipment and resources required, as well as the expected outcomes. Additionally, this subchapter also describes any test developed to verify the correct deployment of the recovery system of the CanSat, such as a parachute or airbag. It also includes videos, graphics or pictures to help illustrate the test procedures and outcomes. This subchapter serves as a guide for the team to ensure that the CanSat meets all the required specifications and performs as expected before launch.
+
+\subsection{Time management}
+This section outlines the schedule and milestones for the CanSat mission, from design to launch. It includes a detailed timeline of the key tasks and activities that need to be completed, as well as the resources required and the expected outcomes. This section also includes a risk management plan that identifies potential risks and their mitigation measures. This section serves as a guide for the team to effectively manage their time and resources throughout the mission, ensuring that it stays on schedule and within budget.
+
+\coloredbox{gray}{black}{
+    {{\it Example:}
+    
+The CanSat mission has a tight schedule that needs to be followed to ensure that the mission is completed within the given timeframe. The following is a detailed timeline of the key tasks and activities that need to be completed:
+
+\begin{itemize}
+    \item \textbf{Design phase:} Jan 1st - Feb 15th
+        \begin{itemize}
+        \item Define mission objectives and requirements
+        \item Design CanSat structure and systems
+        \item Develop software
+        \end{itemize}
+    \item \textbf{Prototyping phase:} Feb 16th - Mar 31st
+        \begin{itemize}
+        \item Build and test prototypes
+        \item Evaluate and refine design
+        \end{itemize}
+    \item \textbf{Construction phase:} Apr 1st - May 15th
+        \begin{itemize}
+        \item Construct final CanSat
+        \item Perform final testing
+        \end{itemize}
+    \item \textbf{Launch phase:} May 16th - May 31st
+        \begin{itemize}
+        \item Prepare for launch
+        \item Launch CanSat
+        \end{itemize}
+\end{itemize}
+
+The schedule also includes the resources required and the expected outcomes for each phase. The team has also identified potential risks and their mitigation measures to ensure that the mission stays on schedule and within budget.
+
+Risk Management:
+
+\begin{itemize}
+    \item \textbf{Risk 1:} Delays in obtaining materials
+        \begin{itemize}
+        \item Mitigation: Place orders for materials well in advance
+        \end{itemize}
+    \item \textbf{Risk 2:} Unforeseen technical difficulties
+        \begin{itemize}
+        \item Mitigation: Allow extra time for testing and troubleshooting
+        \end{itemize}
+    \item \textbf{Risk 3:} Weather delays on launch day
+        \begin{itemize}
+        \item Mitigation: Have backup launch dates scheduled
+        \end{itemize}
+\end{itemize}
+}
+}
+
+\section{Data analysis and outreach}
+\subsection{Data Analysis Plan}
+This section will provide a detailed plan for analysing the data collected during the CanSat mission, including the software and tools used. It will outline the steps taken to process, interpret and visualise the data to achieve the objectives of the mission. Additionally, it will highlight any statistical techniques or models used to analyse the data, as well as any potential challenges or limitations in the data analysis process.
+
+The data analysis plan for the CanSat mission is designed to process and interpret the data collected by the various sensors on board the CanSat. The following software and tools can be used for data analysis:
+\begin{itemize}
+  \item \textbf{Data acquisition software:} A software program that is used to collect and store data from the CanSat sensors in real-time. The data acquisition software is designed to be compatible with the sensors used on the CanSat and will be used to record data during the flight.
+  \item \textbf{Data processing software:} A software program that is used to process and clean the raw data collected by the data acquisition software. This software will be used to filter out any noise or errors in the data and to organise the data into a format that is suitable for analysis.
+  \item \textbf{Data visualisation software:} A software program that is used to create visual representations of the data, such as graphs and charts. This software will be used to create visualisations that can be used to quickly understand the data and identify patterns or trends.
+  \item \textbf{Statistical analysis software:} A software program that is used to perform statistical analyses on the data, such as hypothesis testing, regression analysis, and cluster analysis. This software will be used to identify any significant relationships or patterns in the data.
+  \item \textbf{GIS software:} Geographic Information System software will be used to visualise the data collected by the CanSat in the form of maps.
+\end{itemize}
+
+The data analysis plan will be regularly reviewed and updated as necessary to ensure that the data is being analysed effectively and that any issues or problems are identified and addressed in a timely manner.
+
+\subsection{Outreach Program}
+The Outreach Program section of a CanSat Preliminary Design Report for a CanSat contest should provide a detailed plan for how the team will engage with and educate the public about the project. This can include a variety of different types of outreach activities, such as:
+\begin{itemize}
+  \item \textbf{Presentations:} The team should plan to give presentations about the CanSat project to schools, community groups, and other organisations to educate people about the project and the technology used.
+  \item \textbf{Workshops:} The team can organise workshops about how to design and build CanSat.
+  \item \textbf{Demonstrations:} The team can provide demonstrations of the CanSat and its capabilities, either in person or through videos or other forms of media.
+  \item \textbf{Social Media:} The team should use social media platforms like Twitter, Instagram, and Facebook to document their progress and share updates about the project with the public.
+  \item \textbf{Websites:} The team should develop a website to provide information about the project, including updates on the progress, photos, videos, and data from the mission.
+  \item \textbf{Community Engagement:} The team should engage with the local community, for example, by visiting schools or community centres and talking to people about the project and its goals.
+  \item \textbf{Science Fairs or events:} The team can participate in science fairs or events to showcase their CanSat design and to educate people about the project.
+\end{itemize}
+
+It is important to remember that the outreach program is an essential aspect of the CanSat project, as it helps to educate people about the project, creates interest in the project, and improves the visibility of the project.
+
+The section should also include details on the expected audience, the message, the medium and the outcome of the outreach activities.
+
+It is also important to note that the outreach program should be planned and executed throughout the project to ensure continuity and effective communication with the audience.
+
+\section{Conclusion}
+\subsection{Summary of the CDR}
+This chapter provides a summary of the CDR and highlights the key aspects of the CanSat mission. It includes recommendations for next steps, along with any unresolved issues or risks that need to be addressed. This section serves as a guide for the team to evaluate the progress of the mission and to make adjustments as necessary to ensure that the mission is completed successfully.
+
+\subsection{Recommendations for next steps}
+The next steps include building and testing the physical CanSat, as well as developing and testing the software and firmware that will control its functions. Some possible issues that may arise during this process include technical difficulties with the hardware or software, issues with the launch or landing of the CanSat, and problems with data collection or transmission. It is important to have a plan in place to address these potential issues, and to thoroughly test the CanSat before the competition to minimise the risk of failure.
+
+In this chapter you should try to address some methods in order to prevent and / or fix such issues.
+
+Additionally, teams should continue to communicate and collaborate with their advisors and mentors to ensure that the project is progressing smoothly.
+
+%\subsection{Unresolved issues or risks}
+
+
+\end{document}
