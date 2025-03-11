@@ -1,3 +1,7 @@
+\makeatletter
+\def\input@path{{./styles/}}
+\makeatother
+
 \documentclass[11pt]{article}
 \usepackage{CDOSR_CanSat, lipsum, amssymb, array, hyperref}
 \cansatstyle
@@ -59,10 +63,10 @@ While some of the final circuit boards (PCBs) are still in transit from the supp
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4} % set color of vertical lines
+\arrayrulecolor{CDOSRPrimary} % set color of vertical lines
 \begin{tabular}{>{\centering\arraybackslash}m{3cm}>{\centering\arraybackslash}llll}
 \hline
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \textbf{\color{white!50}{Module}} & \textbf{\color{white}{Sensor}} & \textbf{\color{white}{I2C Bus}} & \textbf{\color{white}{I2C Address}} & \textbf{\color{white}{Manufacturer}} \\
 Sensor board & MLX90393 & 2 & 0x0C - 0x0F & Melexix \\
 Sensor board & MMC5603 & 1 & 0x30 & Emsic \\
@@ -92,10 +96,10 @@ With this final list of sensors, our team is excited to move forward with integr
 
 % \begin{table}[htbp]
 % \centering
-% \arrayrulecolor{DeepSkyBlue4} % set color of vertical lines
+% \arrayrulecolor{CDOSRPrimary} % set color of vertical lines
 % \begin{tabular}{>{\centering\arraybackslash}m{1cm}>{\centering\arraybackslash}lc}
 % \hline
-% \rowcolor{DeepSkyBlue4}
+% \rowcolor{CDOSRPrimary}
 % &\textbf{\color{white!50}{CanSat Characteristics (description)}} & \textbf{\color{white}{Figure (units)}} \\
 % \hline
 
@@ -117,7 +121,7 @@ As part of our  testing process, we designed and tested two parachutes that were
 
 % The second parachute was designed for use during calm weather conditions and had a diameter of 26.7 cm and a surface area of 444.9 square centimeters, which is designed to slow down the descent speed to 6 meters per second. This parachute was optimized for stable and predictable conditions and is intended to provide a gentle and controlled descent of the CanSat during calm weather conditions.
 
-\coloredbox{LightCyan1!50}{DeepSkyBlue4}{DeepSkyBlue4}{
+\coloredbox{LightCyan1!50}{CDOSRPrimary}{CDOSRPrimary}{
     \begin{minipage}{0.4\textwidth}
     The smaller parachute had a diameter of 35.6 cm and a surface area of 790.9 square centimeters, which is designed to slow down the descent speed to 9 meters per second. 
     
@@ -128,7 +132,7 @@ As part of our  testing process, we designed and tested two parachutes that were
     \includegraphics[width=5cm]{images/PlotItem_2.png}
     \end{minipage}
 }
-\coloredbox{LightCyan1!50}{DeepSkyBlue4}{DeepSkyBlue4}{
+\coloredbox{LightCyan1!50}{CDOSRPrimary}{CDOSRPrimary}{
     \begin{minipage}{0.4\textwidth}
     The second parachute was designed for use during calm weather conditions and had a diameter of 26.7 cm and a surface area of 444.9 square centimeters, which is designed to slow down the descent speed to 6 meters per second. 
     
@@ -473,7 +477,7 @@ The CoderDojo Space Robotics project team will execute the mission by designing 
 These key elements will play an essential role in accomplishing the mission objectives. Here is a brief explanation of each element:
 \begin{itemize}[leftmargin=1.27cm, itemindent=0cm, topsep=2pt, label=\faTasks]
     \item[\faThermometerQuarter] \textbf{Sensor System}: A sensor system is critical to the mission's success as it helps to measure various parameters that are important for the experiment. The sensor system can measure parameters such as temperature, pressure, inertial performance, UV, light intensity, and particulate matter. These measurements will provide valuable data for the post-launch data analysis.
-    \coloredbox{LightCyan1!50}{DeepSkyBlue4}{DeepSkyBlue4}{
+    \coloredbox{LightCyan1!50}{CDOSRPrimary}{CDOSRPrimary}{
         {During the descent, the CanSat will record, store, and transmit the following data:
         \begin{multicols}{2}[\vspace{-0.6\baselineskip}]
             \begin{itemize}[noitemsep, topsep=0pt, label=\ding{111}]
@@ -547,10 +551,10 @@ The design of the can is also important to ensure its durability during the laun
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4} % set color of vertical lines
+\arrayrulecolor{CDOSRPrimary} % set color of vertical lines
 \begin{tabular}{>{\centering\arraybackslash}m{1cm}>{\centering\arraybackslash}lc}
 \hline
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 &\textbf{\color{white!50}{CanSat Characteristics (description)}} & \textbf{\color{white}{Figure (units)}} \\
 \hline
 %\rowcolors{2}{LightCyan!50}{}
@@ -607,10 +611,10 @@ An ESP32 module with a camera is used for the video recording and streaming feat
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabularx}{0.95\textwidth}{>{\raggedright\arraybackslash}p{3.5cm}c>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{5.5cm}}
 \hline
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \textbf{\color{white!50}{Component}} & \textbf{\color{white!50}{Voltage}} & \textbf{\color{white!50}\textbf{Protocol}} & \textbf{\color{white!50}\textbf{Other Information}} \\ \hline
 \rowcolors{2}{red}{}
 ESP32-S3-Wroom & \SI{3.3}{\volt} & I2C, I2S, SPI, PWM, UART, USB & {Dual-core $\mu$Processor}\\ %\hline
@@ -650,11 +654,11 @@ The duration of 1 hour and 52 minutes is applicable when the CanSat's electronic
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabular}{>{\raggedright\arraybackslash}p{4.9cm}c>{\raggedleft\arraybackslash}p{1.85cm}
 >{\raggedleft\arraybackslash}p{1.85cm}>{\centering\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{1.6cm}}
 \hline
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \textbf{\color{white!50}{Component}} & \textbf{\color{white!50}{Voltage}} & \textbf{\color{white!50}\textbf{Current}} & \textbf{\color{white!50}\textbf{Power}} & \textbf{\color{white!50}\textbf{Flight}} & \textbf{\color{white!50}\textbf{Ground}}\\ \hline
 \rowcolors{2}{red}{}
 ESP32-S3-Wroom & \SI{3.3}{\volt} & \SI{240}{\milli\ampere} & \SI{0.792}{\watt} & \ding{51} & \ding{51} \\
@@ -678,7 +682,7 @@ Quectel L76 & \SI{3.3}{\volt} &  \SI{25}{\milli\ampere} &  \SI{0.0825}{\watt} & 
 RN2483 LoRa Module& \SI{3.3}{\volt} & \SI{40}{\milli\ampere} &  \SI{0.132}{\watt} &\ding{51} & \ding{51} \\
 \rowcolor{LightCyan1!50}Power Switching Regulators & \SI{3.3}{\volt} &\SI{800}{\milli\ampere}&  \SI{2.64}{\watt} &\ding{51} & \ding{51} \\
 Buzzer & \SI{5}{\volt} &\SI{30}{\milli\ampere}&  \SI{0.15}{\watt} &\ding{55} & \ding{51} \\
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \textbf{\color{white!50}{Total Power}} & & & \textbf{\color{white!50}{\SI{15.2045}{\watt}}} & & \\
 \hline
 \end{tabular}
@@ -694,10 +698,10 @@ The CanSat is powered by a rechargeable dual lithium-ion chemistry 18650-battery
     
     % \begin{table}[htbp]
     %   \centering
-    %   \arrayrulecolor{DeepSkyBlue4}
+    %   \arrayrulecolor{CDOSRPrimary}
     %     \begin{tabular}{llcccc}
     %     \hline
-    %     \rowcolor{DeepSkyBlue4}
+    %     \rowcolor{CDOSRPrimary}
     %     \textbf{\color{white!50}{Device}} &  \textbf{\color{white!50}{Voltage}} &  \textbf{\color{white!50}{Current (mA)}} & \textbf{\color{white!50}{Power (mW)}} & \textbf{\color{white!50}{Flight}} & \textbf{\color{white!50}{Ground}} \\
     %     \hline
     %     ESP32 Board & 5 & 20 & 100 & ON &ON \\
@@ -745,9 +749,9 @@ The CanSat will collect various data from the sensors, with sensors being fetche
 
 \begin{table}[ht]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabular}{ll}
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \hline
 \textbf{\color{white!50}{Data Interface}} & \textbf{\color{white!50}{Components}} \\ \hline
 USART/UART & Radio link module \\
@@ -859,9 +863,9 @@ To calculate the dimensions required for the parachute, we considered the follow
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabular}{>{\centering\arraybackslash}lc}
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \hline
 \multicolumn{1}{|c|}{\textbf{\color{white!50}{Parameter}}}  & \textbf{\color{white!50}{Value}} \\
 \hline
@@ -1070,9 +1074,9 @@ The components required for the project were purchased from various suppliers su
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabular}{>{\centering\arraybackslash}p{4.5cm}>{\centering\arraybackslash}lc}
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \hline
 \multicolumn{1}{c}{\textbf{\color{white!50}{Category}}}& \multicolumn{1}{c}{\textbf{\color{white!50}{Cost Item}}} & \textbf{\color{white!50}{Cost \texteuro}} \\
 \hline
@@ -1281,7 +1285,7 @@ By conducting both general and specific tests, the team can be confident that th
 
 
 \subsection{Time management}
-To ensure the project stays on track and meets the desired timeline, we have decided to utilize the web-based Gantt tool, \href{https://app.teamgantt.com/}{\color{DeepSkyBlue4}{TeamGantt.com}}. The project has been divided into several phases, with each phase having a specific duration and tasks to be accomplished.
+To ensure the project stays on track and meets the desired timeline, we have decided to utilize the web-based Gantt tool, \href{https://app.teamgantt.com/}{\color{CDOSRPrimary}{TeamGantt.com}}. The project has been divided into several phases, with each phase having a specific duration and tasks to be accomplished.
 
 The ideation phase has already been completed, and we are currently in the design and prototyping stages of the CanSat, with the remaining phases including various testing campaigns and construction runs. The exact details of the testing phase are yet to be defined and will be determined as the project progresses. The final phase will culminate in the competition. By using this tool, we can monitor progress, adjust timelines, and stay on schedule to achieve the desired outcomes
 
@@ -1331,9 +1335,9 @@ Our program takes into account the potential issues that may arise at each phase
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4}
+\arrayrulecolor{CDOSRPrimary}
 \begin{tabular}{>{\raggedright\arraybackslash}p{8cm}>{\raggedright\arraybackslash}p{7cm}}
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \hline
 \multicolumn{1}{c}{\textbf{\color{white!50}{Major risks}}} & \multicolumn{1}{c}{\textbf{\color{white!50}{Mitigation}}} \\
 \hline
@@ -1487,10 +1491,10 @@ As for specific recommendations for ourselves we thought of the following:
 
 \begin{table}[htbp]
 \centering
-\arrayrulecolor{DeepSkyBlue4} % set color of vertical lines
+\arrayrulecolor{CDOSRPrimary} % set color of vertical lines
 \begin{tabular}{>{\centering\arraybackslash}m{6cm}>{\centering\arraybackslash}l}
 \hline
-\rowcolor{DeepSkyBlue4}
+\rowcolor{CDOSRPrimary}
 \textbf{\color{white!50}{Characteristics}} & \textbf{\color{white}{Figure}}  \\
 \hline
 Height of the CanSat & 110 mm \\

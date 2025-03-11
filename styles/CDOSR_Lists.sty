@@ -1,0 +1,48 @@
+%% CDOSR_Lists.sty
+%% Version 1.0 (2025)
+%% 
+%% List styles for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Lists}[2025/03/11 v1.0 CanSat List Styles]
+
+\RequirePackage{enumitem}
+\RequirePackage{pifont}
+\RequirePackage{fontawesome5}
+
+%% ============================================================================
+%% LIST ENVIRONMENTS
+%% ============================================================================
+
+% Default list settings
+\setlist{nolistsep}
+\setlist{itemsep=0pt, parsep=0pt}
+
+% Custom list spacing
+\newcommand{\setitemizespacing}[1]{%
+  \setlength{\itemsep}{#1}%
+}
+
+% Custom item markers
+\newcommand{\graytriangleright}{\textcolor{dgray}{$\blacktriangleright$}}
+\newcommand{\myitem}{\item[\graytriangleright]\color{dgray}}
+\newcommand{\myitemtwo}{\item[$\triangleright$]\color{dgray}}
+
+% Create a checklist environment
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=\ding{51}, leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt}
+
+% Create a requirements list environment 
+\newlist{requirements}{enumerate}{2}
+\setlist[requirements]{label=REQ-\arabic*, leftmargin=1.5cm, itemindent=0cm, noitemsep, topsep=2pt}
+
+% Create a risk list environment
+\newlist{risklist}{itemize}{2}
+\setlist[risklist]{label=\faExclamationTriangle, leftmargin=1.25cm, itemindent=0cm, topsep=2pt}
+
+% Create a component list environment
+\newlist{components}{itemize}{2}
+\setlist[components]{label=\faMicrochip, leftmargin=1.75cm, itemindent=0cm, noitemsep, topsep=2pt}

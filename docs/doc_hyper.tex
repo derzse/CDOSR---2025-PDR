@@ -1,0 +1,156 @@
+\input{config}
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{endnotes}
+\usepackage{hyperendnotes}
+
+\title{\texttt{hyperendnotes} -- Enhanced Hyperlinked Endnotes}
+\author{Package Documentation}
+\date{\today}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  commentstyle=\color{gray},
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=[LaTeX]TeX,
+  showspaces=false,
+  showstringspaces=false,
+  stringstyle=\color{purple},
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The \code{hyperendnotes} package extends the standard \code{endnotes} package to include hyperlink functionality. It creates two-way hyperlinks between endnote marks in the text and the corresponding endnotes at the end of the document. This package is particularly useful for long documents where readers might want to quickly navigate between citations and endnotes.
+
+\section{Package Dependencies}
+
+The \code{hyperendnotes} package requires:
+
+\begin{itemize}
+  \item \code{endnotes} -- For basic endnote functionality
+  \item \code{hyperref} -- For hyperlink capabilities
+\end{itemize}
+
+\section{Usage}
+
+\subsection{Loading the Package}
+
+Load the package after \code{endnotes} and \code{hyperref}:
+
+\begin{lstlisting}
+\usepackage{endnotes}
+\usepackage{hyperref}
+\usepackage{hyperendnotes}
+\end{lstlisting}
+
+\subsection{Basic Commands}
+
+The package provides the same commands as the standard \code{endnotes} package, but with added hyperlink functionality:
+
+\begin{itemize}
+  \item \code{\textbackslash endnote\{text\}} -- Creates an endnote with the given text and a numbered reference in the text
+  \item \code{\textbackslash endnotemark} -- Places just the endnote mark without creating an endnote
+  \item \code{\textbackslash endnotetext\{text\}} -- Adds endnote text without placing a mark
+  \item \code{\textbackslash theendnotes} -- Outputs all endnotes at the current position
+\end{itemize}
+
+\subsection{Enabling/Disabling Hyperlinks}
+
+The package provides two commands to toggle hyperlink functionality:
+
+\begin{lstlisting}
+\enotelinkstrue  % Enable hyperlinks (default)
+\enotelinksfalse % Disable hyperlinks
+\end{lstlisting}
+
+\section{Example}
+
+Here's an example demonstrating the use of hyperlinked endnotes:
+
+\begin{tcolorbox}[colback=gray!5, colframe=gray!75, title=Example Code]
+\begin{lstlisting}
+\documentclass{article}
+\usepackage{endnotes}
+\usepackage{hyperref}
+\usepackage{hyperendnotes}
+
+\begin{document}
+
+This is some text with an endnote.\endnote{This is the content of the endnote.}
+Here is another endnote.\endnote{Second endnote with a \url{https://example.com} link.}
+
+\newpage
+\theendnotes
+\end{document}
+\end{lstlisting}
+\end{tcolorbox}
+
+In this example:
+\begin{enumerate}
+  \item Each endnote mark in the text is a hyperlink to the corresponding endnote at the end.
+  \item Each endnote has a hyperlink back to where it was referenced in the text.
+  \item Hyperlinks within endnotes (like the URL) remain functional.
+\end{enumerate}
+
+\section{Customization}
+
+The package provides some customization options by modifying internal commands:
+
+\begin{lstlisting}
+% Change the spacing between endnotes
+\def\@doanenote##1##2##3>{%
+  ...
+  \medskip % Change \smallskip to \medskip for more space
+  ...
+}
+
+% Change endnote mark formatting in the endnotes section
+\renewcommand*\@makeenmark{%
+  \hbox{\bfseries\@theenmark.}% Bold with period
+}
+\end{lstlisting}
+
+\section{Technical Details}
+
+The \code{hyperendnotes} package works by:
+
+\begin{enumerate}[label=\arabic*.]
+  \item Creating hyperlink anchors at each endnote reference in the text
+  \item Storing the endnote number for later use
+  \item Creating hyperlinks from each endnote back to its reference point
+  \item Preserving any existing hyperlinks within the endnote text
+\end{enumerate}
+
+The package uses a counter named \code{Hendnote} to track endnote numbers for hyperlink targets. It also preserves and restores the \code{\textbackslash href} and \code{\textbackslash url} commands to ensure they work correctly within endnotes.
+
+\section{Limitations}
+
+\begin{itemize}
+  \item The package modifies internal commands of the \code{endnotes} package, so compatibility issues may arise if \code{endnotes} is updated.
+  \item The hyperlinks are created using the current endnote number, so if you reorder your endnotes, the hyperlinks might not work correctly until you recompile.
+  \item The package assumes \code{hyperref} is loaded with default settings. Custom \code{hyperref} configurations might affect the hyperlink appearance.
+\end{itemize}
+
+\section{Demonstration}
+
+This is a sample sentence with an endnote\endnote{This is an endnote with a hyperlink back to the reference.} to demonstrate the functionality. Here's another endnote\endnote{Second endnote with a \url{https://example.com} URL.} showing hyperlinks within endnotes.
+
+\vspace{1cm}
+\theendnotes
+
+\end{document}

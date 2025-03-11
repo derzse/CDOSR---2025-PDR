@@ -1,0 +1,28 @@
+%% CDOSR_Bibliography.sty
+%% Version 1.0 (2025)
+%% 
+%% Bibliography styles for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Bibliography}[2025/03/11 v1.0 CanSat Bibliography Styles]
+
+\RequirePackage[style=numeric,sorting=none]{biblatex}
+
+%% ============================================================================
+%% BIBLIOGRAPHY CONFIGURATION
+%% ============================================================================
+
+% Custom citation style
+\renewcommand{\cite}[1]{\textsuperscript{\autocite{#1}}}
+
+% Configure bibliography appearance
+\defbibheading{bibliography}[\refname]{%
+  \section*{#1}%
+  \markboth{#1}{#1}%
+}
+
+% Set bibliography font size
+\renewcommand*{\bibfont}{\small}

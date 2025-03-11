@@ -1,0 +1,441 @@
+%% CDOSR_CanSat.sty
+%% Version 2.0 (2025)
+%% 
+%% Style file for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v2.0 (2025-03-11): Reorganized code, added better documentation, fixed row coloring
+%% v1.0 (2023-03-30): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_CanSat}[2025/03/11 v2.0 CanSat Competition PDF Style]
+
+%% ============================================================================
+%% PACKAGE DEPENDENCIES
+%% ============================================================================
+
+% Core packages
+\RequirePackage{amsmath, amsfonts, amssymb, amsthm, graphicx}
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{multicol}
+
+% Document structure
+\RequirePackage{fancyhdr}
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+
+% Colors and visual design
+\RequirePackage[table,xcdraw,usenames,dvipsnames,x11names]{xcolor}
+
+
+\RequirePackage{svg}
+\RequirePackage{titlesec, lettrine, textcase, relsize}
+\RequirePackage{fix-cm}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{helvet}
+\RequirePackage{array, adjustbox, colortbl}
+\RequirePackage{siunitx}
+\RequirePackage{hyperref}
+\RequirePackage{endnotes,lipsum}
+\RequirePackage{hyperendnotes}
+\RequirePackage{tabularx}
+\RequirePackage{wrapfig}
+\RequirePackage{tocloft}
+\RequirePackage{pifont}
+\RequirePackage{fontawesome5}
+\RequirePackage{tikz}
+\RequirePackage{colortbl}
+\RequirePackage{zref-savepos}
+\RequirePackage{xifthen} % Required for \isempty test
+\RequirePackage{ulem}
+\fontfamily{phv}\selectfont
+
+%% ============================================================================
+%% COLOR DEFINITIONS
+%% ============================================================================
+
+% Define a consistent color palette
+\definecolor{CDOSRPrimary}{RGB}{0, 103, 149}     % DeepSkyBlue4
+\definecolor{CDOSRSecondary}{RGB}{224, 246, 253} % LightCyan1
+\definecolor{CDOSRAccent}{RGB}{192, 0, 0}        % Red
+\definecolor{CDOSRText}{RGB}{51, 51, 51}         % Dark gray for text
+\definecolor{CDOSRBackground}{RGB}{242, 242, 242} % Light gray for backgrounds
+
+% Provide aliases for backward compatibility
+\colorlet{DeepSkyBlue4}{CDOSRPrimary}
+\colorlet{LightCyan1}{CDOSRSecondary}
+
+
+%% ============================================================================
+%% LAYOUT SETTINGS
+%% ============================================================================
+
+% Adjust the font size of the table of contents
+\renewcommand{\cftsubsecfont}{\small}
+\renewcommand{\cftsubsubsecfont}{\small}
+%\renewcommand{\cftsecfont}{\small}
+
+
+% Technical specification environment
+\newenvironment{techspec}{%
+  \begin{tcolorbox}[
+    colback=CDOSRBackground,
+    colframe=CDOSRPrimary,
+    arc=2mm,
+    title=Technical Specifications,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% Mission parameter environment
+\newenvironment{missionparam}{%
+  \begin{tcolorbox}[
+    colback=CDOSRSecondary!50,
+    colframe=CDOSRPrimary,
+    arc=2mm,
+    title=Mission Parameters,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% Warning box for critical information
+\newenvironment{warningbox}{%
+  \begin{tcolorbox}[
+    colback=red!10,
+    colframe=red!70,
+    arc=2mm,
+    title=Warning,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+
+%% ============================================================================
+%% TABLE ENHANCEMENTS
+%% ============================================================================
+
+% Fixed the row coloring issue
+\newcommand{\datarow}[1]{\rowcolor{white}#1}
+\newcommand{\altdatarow}[1]{\rowcolor{CDOSRSecondary!30}#1}
+
+% Standardized table header style
+\newcommand{\tableheader}{%
+  \rowcolor{CDOSRPrimary}%
+  \color{white}\bfseries%
+}
+
+% Creates a standard data table with headers
+\newenvironment{datatable}[1][]{%
+  \begin{table}[htbp]
+  \centering
+  \arrayrulecolor{CDOSRPrimary}%
+  \renewcommand{\arraystretch}{1.2}%
+  \begin{tabular}{#1}
+  \hline
+}{%
+  \hline
+  \end{tabular}
+  \end{table}
+}
+
+
+%% ============================================================================
+%% FIGURE MANAGEMENT
+%% ============================================================================
+
+% Standard figure environment with consistent styling
+\newcommand{\cansatfigure}[4][]{%
+  % Parameters: [placement], filename, caption, label
+  \begin{figure}[#1]
+    \centering
+    \includegraphics[width=0.9\linewidth]{#2}
+    \caption{\small{#3}}
+    \label{#4}
+  \end{figure}
+}
+
+% Side-by-side figures
+\newcommand{\sidebysideFigures}[6]{%
+  % Parameters: file1, caption1, label1, file2, caption2, label2
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.95\linewidth]{#1}
+      \caption{\small{#2}}
+      \label{#3}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.95\linewidth]{#4}
+      \caption{\small{#5}}
+      \label{#6}
+    \end{minipage}
+  \end{figure}
+}
+
+
+%% ============================================================================
+%% LIST ENVIRONMENTS
+%% ============================================================================
+
+% Create a checklist environment
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=\ding{51}, leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt}
+
+% Create a requirements list environment 
+\newlist{requirements}{enumerate}{2}
+\setlist[requirements]{label=REQ-\arabic*, leftmargin=1.5cm, itemindent=0cm, noitemsep, topsep=2pt}
+
+% Create a risk list environment
+\newlist{risklist}{itemize}{2}
+\setlist[risklist]{label=\faExclamationTriangle, leftmargin=1.25cm, itemindent=0cm, topsep=2pt}
+
+% Create a component list environment
+\newlist{components}{itemize}{2}
+\setlist[components]{label=\faMicrochip, leftmargin=1.75cm, itemindent=0cm, noitemsep, topsep=2pt}
+
+
+%% ============================================================================
+%% DRAFT MODE
+%% ============================================================================
+
+% Draft mode flag
+\newif\ifcdosrdraft
+\cdosrdraftfalse  % Default is final mode, not draft
+
+% Enable draft mode
+\DeclareOption{draft}{
+  \cdosrdrafttrue
+  \PassOptionsToPackage{draft}{graphicx}
+}
+
+% Process options
+\ProcessOptions\relax
+
+% Draft watermark
+\ifcdosrdraft
+  \RequirePackage{draftwatermark}
+  \SetWatermarkText{DRAFT}
+  \SetWatermarkScale{0.5}
+  \SetWatermarkColor{red!30}
+  
+  % Draft margin notes for TODOs
+  \RequirePackage{todonotes}
+  \newcommand{\todo}[1]{\marginpar{\textcolor{red}{TODO: #1}}}
+\else
+  % In final mode, \todo does nothing
+  \newcommand{\todo}[1]{}
+\fi
+
+%% ============================================================================
+%% MATH AND PHYSICS ENHANCEMENTS
+%% ============================================================================
+
+% Physics-related units and symbols
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\lightyear{ly}
+\DeclareSIUnit\astronomicalunit{AU}
+
+% Space environment calculation macros
+\newcommand{\earthgravity}{9.81~\si{\meter\per\square\second}}
+\newcommand{\atmPressure}{101325~\si{\pascal}}
+
+% Specialized equation environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}[section]
+
+%% ============================================================================
+%% HYPERREF CONFIGURATION
+%% ============================================================================
+
+% Configure hyperref with consistent styling
+\hypersetup{
+  colorlinks=true,
+  linkcolor=CDOSRPrimary,
+  filecolor=CDOSRPrimary,
+  urlcolor=CDOSRPrimary,
+  citecolor=CDOSRPrimary,
+  pdftitle={CanSat Competition Report},
+  pdfauthor={CoderDojo Oradea Space Robotics},
+  pdfsubject={CanSat Report},
+  pdfkeywords={CanSat, Space, Robotics, Satellite, Education},
+  pdfproducer={LaTeX},
+  pdfcreator={LaTeX with hyperref}
+}
+
+
+%% ============================================================================
+%% BIBLIOGRAPHY CONFIGURATION
+%% ============================================================================
+
+\RequirePackage[style=numeric,sorting=none]{biblatex}
+
+% Custom citation style
+\renewcommand{\cite}[1]{\textsuperscript{\autocite{#1}}}
+
+% Configure bibliography appearance
+\defbibheading{bibliography}[\refname]{%
+  \section*{#1}%
+  \markboth{#1}{#1}%
+}
+
+% Set bibliography font size
+\renewcommand*{\bibfont}{\small}
+
+
+%% ============================================================================
+%% PATH MANAGEMENT
+%% ============================================================================
+
+% Set default image paths
+\graphicspath{{images/}{images/template/}{images/diagrams/}{images/photos/}{icons/}}
+
+% Command to set custom image paths
+\newcommand{\setcansatimagepaths}[1]{%
+  \graphicspath{#1}
+}
+
+
+
+
+\newcommand{\cansattitle}[3]{%
+  \begin{titlepage}
+      \begin{center}
+        \vspace*{1cm}
+        \Huge{\textbf{#1}}
+
+        \vspace{4.5cm}
+        \includegraphics[width=0.4\textwidth]{#2}%
+        \ifthenelse{\isempty{#3}}{}{%
+          \hspace{1cm}
+          \includegraphics[width=0.4\textwidth]{#3}%
+        }
+
+      \end{center}
+      \vspace{4.5cm}
+      {\LARGE{\textbf{Team Name: CoderDojo Oradea Space Robotics}}}\\[0.3cm]
+      {\LARGE{\textbf{Organisation: CoderDojo Oradea}}}\\[0.3cm]
+      {\LARGE{\textbf{Country: Romania}}}
+    
+      \vspace{0.5cm}
+      \begin{flushright} 
+        \textbf{\@date}
+      \end{flushright}
+    \end{titlepage}
+}
+
+\newcommand{\righttext}{\textbf{Romanian CanSat and \\Rocketry Competition}}
+\newcommand{\centerheadtext}{\textbf{CoderDojo Oradea Space Robotics - PDR}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L,R]{\thepage}
+\fancyhead[R]{\textbf{\leftmark}}
+\fancyhead[LO]{\textbf{\rightmark}}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}% Remove header rule
+  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
+  \fancyhead[L]{\includegraphics[scale=0.15]{images/template/img_CDOSR.png}}
+  \fancyhead[C]{\raisebox{1.5\height}{\centerheadtext}}
+  \fancyhead[R]{\includegraphics[scale=0.016]{images/template/img_CANSAT_RO.png}}
+  \fancyhead[C]{\HruleCanSat[DeepSkyBlue4]{5pt}{-15pt}{1.5pt}}
+  \fancyfoot[C]{\HruleCanSat[DeepSkyBlue4]{5pt}{2pt}{1.5pt}\includegraphics[scale=0.115]{images/template/img_Cansats_in_europe.png}}
+  \fancyfoot[R]{\textbf{\thepage}}%
+}
+
+% \fancypagestyle{plain}{%
+%   \fancyhf{}%
+%   \fancyhead[L]{\includegraphics[width=3cm]{images/ROSPIN_Logo.png}}
+%   \fancyhead[R]{\righttext}
+%   \fancyfoot[R]{\textbf{\thepage}}%
+% }
+
+% Define section and subsection formatting
+\titleformat{\section}[block]{\Large\filcenter\textsc}{\thesection}{1em}{\scshape}
+\titleformat{\subsection}[block]{\large\textsc}{\thesubsection.}{1em}{\scshape}
+\titleformat{\subsubsection}[block]{\large\textsc}{\thesubsubsection.}{1em}{\scshape}
+
+\AtBeginDocument{
+  \pagestyle{empty}
+}
+
+\renewcommand{\title}[1]{\def\@title{#1}}
+\renewcommand{\author}[1]{\def\@author{#1}}
+\renewcommand{\date}[1]{\def\@date{#1}}
+
+\definecolor{gray}{rgb}{0.60, 0.60, 0.60}
+\newcommand{\coloredbox}[4]{
+    \begin{tcolorbox}[colback=#1, colframe=#2, arc=2mm, boxrule=0mm]
+        {\color{#3} #4}
+    \end{tcolorbox}
+}
+\newcommand{\HruleCanSat}[4][.]{%
+  \par\addvspace{#2}%
+  \begingroup\color{#1}%
+  \hrule height #4
+  \endgroup
+  \addvspace{#3}%
+}
+
+\definecolor{dgray}{rgb}{0.40, 0.40, 0.40}
+
+\newcommand{\graytriangleright}{\textcolor{dgray}{$\blacktriangleright$}}
+\newcommand{\myitem}{\item[\graytriangleright]\color{dgray}}
+\newcommand{\myitemtwo}{\item[$\triangleright$]\color{dgray}}
+
+
+
+\newcommand{\setitemizespacing}[1]{%
+  \setlength{\itemsep}{#1}%
+}
+
+\setlist{nolistsep}
+\setlist{itemsep=0pt, parsep=0pt}
+
+\newcommand{\cansatstyle}{
+  \setlength{\headheight}{36.58205pt}
+  \addtolength{\topmargin}{-24.58205pt}
+}
+
+% \newcommand{\cansatstyle}{
+%   \setlength{\headheight}{40.3135pt}
+%   \addtolength{\topmargin}{-1.9728pt}
+% }
+
+\newcommand{\altitudeicon}{
+    \begin{tikzpicture}[scale=0.15]
+        % Ground
+        \draw[fill=black] (0,0) -- (2,0) -- (1,1) -- cycle;
+        % Altitude lines
+        \draw (1,1) -- (1,3);
+        \draw (0.5,1.5) -- (1.5,1.5);
+        \draw (0.75,2) -- (1.25,2);
+        \draw (1,2.5) circle[radius=0.25];
+    \end{tikzpicture}
+}
+\newcommand{\newaltitudeicon}{\includegraphics[width=0.42cm]{icons/icon_altitude.png}}
+\newcommand{\newgsmicon}{\includegraphics[width=0.4cm]{icons/icon_gsm.png}}
+\newcommand{\newphoneicon}{\includegraphics[width=0.2cm]{icons/icon_phone.png}}
+\newcommand{\newweighticon}{\includegraphics[width=0.45cm]{icons/weight.png}}
+
+\zsaveposy{startImage}
+\newlength{\remainingSpace}
+\setlength{\remainingSpace}{\dimexpr\zposy{startImage}sp-\baselineskip-\topskip}
+
+

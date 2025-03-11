@@ -1,5 +1,7 @@
+\input{config}
+
 \documentclass[11pt]{article}
-\usepackage{CDOSR_CanSat, lipsum, xcolor}
+\usepackage{CDOSR_CanSat}
 \cansatstyle
 
 \title{Guidelines for the Critical Design Report
@@ -8,8 +10,7 @@
 \date{March 01, 2025}
 
 \begin{document}
-
-\cansattitle{}{}{}
+\cansattitle{Critical Design Report}{img_CDOSR.png}{img_CANSAT_RO.png}
 
 
 %%%%%%%%%% INTRO PAGE - DELETE BEFORE SUBMISSION %%%%%%%%%%%
@@ -72,7 +73,6 @@ In the “Task List” section, you should break down the project work into a li
 \coloredbox{gray}{black}{
 \[
 \begin{tabular}{lccc}
-
 {\color{blue}\textbf{In progress}} & \multicolumn{3}{l}{\textbf{High level task 1.}}\\
  & {\color{blue}\textbf{In progress}} & \multicolumn{2}{l}{\textbf{Lower level task 1.1}}\\
  & & {\color{green}\textbf{Done}} & specific task 1.1.1\\
@@ -92,7 +92,6 @@ In the “Task List” section, you should break down the project work into a li
 \end{tabular}
 \]
 }
-
 \subsection{Detailed project status}
 In the “Detailed Project Status” section, write any comments you have about any specific issues you are having, and let us know how the project is going in general.
 

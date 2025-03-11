@@ -1,0 +1,27 @@
+%% CDOSR_Draft.sty
+%% Version 1.0 (2025)
+%% 
+%% Draft mode for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Draft}[2025/03/11 v1.0 CanSat Draft Mode]
+
+\RequirePackage{draftwatermark}
+\RequirePackage{todonotes}
+
+%% ============================================================================
+%% DRAFT MODE
+%% ============================================================================
+
+% Draft watermark
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{0.5}
+\SetWatermarkColor{red!30}
+
+% Todo commands
+\newcommand{\todo}[1]{\marginpar{\textcolor{red}{TODO: #1}}}
+\newcommand{\fixme}[1]{\marginpar{\textcolor{orange}{FIXME: #1}}}
+\newcommand{\review}[1]{\marginpar{\textcolor{blue}{REVIEW: #1}}}

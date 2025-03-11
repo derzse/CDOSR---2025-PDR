@@ -1,0 +1,59 @@
+%% CDOSR_Boxes.sty
+%% Version 1.0 (2025)
+%% 
+%% Box and environment styles for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Boxes}[2025/03/11 v1.0 CanSat Box Environments]
+
+\RequirePackage{tcolorbox}
+\RequirePackage{xcolor}
+
+% Colored box command
+\newcommand{\coloredbox}[4]{
+    \begin{tcolorbox}[colback=#1, colframe=#2, arc=2mm, boxrule=0mm]
+        {\color{#3} #4}
+    \end{tcolorbox}
+}
+
+% Technical specification environment
+\newenvironment{techspec}{%
+  \begin{tcolorbox}[
+    colback=CDOSRBackground,
+    colframe=CDOSRPrimary,
+    arc=2mm,
+    title=Technical Specifications,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% Mission parameter environment
+\newenvironment{missionparam}{%
+  \begin{tcolorbox}[
+    colback=CDOSRSecondary!50,
+    colframe=CDOSRPrimary,
+    arc=2mm,
+    title=Mission Parameters,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% Warning box for critical information
+\newenvironment{warningbox}{%
+  \begin{tcolorbox}[
+    colback=red!10,
+    colframe=red!70,
+    arc=2mm,
+    title=Warning,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}

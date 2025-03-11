@@ -1,0 +1,34 @@
+%% CDOSR_Math.sty
+%% Version 1.0 (2025)
+%% 
+%% Math and physics styles for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Math}[2025/03/11 v1.0 CanSat Math Styles]
+
+\RequirePackage{amsmath, amsthm}
+\RequirePackage{siunitx}
+
+%% ============================================================================
+%% MATH AND PHYSICS ENHANCEMENTS
+%% ============================================================================
+
+% Physics-related units and symbols
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\lightyear{ly}
+\DeclareSIUnit\astronomicalunit{AU}
+
+% Space environment calculation macros
+\newcommand{\earthgravity}{9.81~\si{\meter\per\square\second}}
+\newcommand{\atmPressure}{101325~\si{\pascal}}
+
+% Specialized equation environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}[section]

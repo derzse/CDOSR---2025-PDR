@@ -1,0 +1,40 @@
+%% CDOSR_Tables.sty
+%% Version 1.0 (2025)
+%% 
+%% Table styles for CoderDojo Oradea Space Robotics CanSat Competition
+%% 
+%% CHANGELOG:
+%% v1.0 (2025-03-11): Initial version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{CDOSR_Tables}[2025/03/11 v1.0 CanSat Table Styles]
+
+\RequirePackage{array, tabularx, colortbl, adjustbox}
+
+%% ============================================================================
+%% TABLE ENHANCEMENTS
+%% ============================================================================
+
+% Fixed the row coloring issue
+\newcommand{\datarow}[1]{\rowcolor{white}#1}
+\newcommand{\altdatarow}[1]{\rowcolor{CDOSRSecondary!30}#1}
+
+% Standardized table header style
+\newcommand{\tableheader}{%
+  \rowcolor{CDOSRPrimary}%
+  \color{white}\bfseries%
+}
+
+% Creates a standard data table with headers
+\newenvironment{datatable}[1][]{%
+  \begin{table}[htbp]
+  \centering
+  \arrayrulecolor{CDOSRPrimary}%
+  \renewcommand{\arraystretch}{1.2}%
+  \begin{tabular}{#1}
+  \hline
+}{%
+  \hline
+  \end{tabular}
+  \end{table}
+}
