@@ -34,6 +34,7 @@
 \RequirePackage{titlesec, lettrine, textcase, relsize}
 \RequirePackage{fix-cm}
 \RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins,raster,breakable}
 \RequirePackage{enumitem}
 \RequirePackage{helvet}
 \RequirePackage{array, adjustbox, colortbl}
@@ -54,16 +55,22 @@
 \RequirePackage{pdflscape}
 \fontfamily{phv}\selectfont
 
+\usepackage{bookmark}
+\bookmarksetup{open,numbered}
+
 %% ============================================================================
 %% COLOR DEFINITIONS
 %% ============================================================================
 
-% Define a consistent color palette
-\definecolor{CDOSRPrimary}{RGB}{0, 103, 149}     % DeepSkyBlue4
-\definecolor{CDOSRSecondary}{RGB}{224, 246, 253} % LightCyan1
-\definecolor{CDOSRAccent}{RGB}{192, 0, 0}        % Red
-\definecolor{CDOSRText}{RGB}{51, 51, 51}         % Dark gray for text
-\definecolor{CDOSRBackground}{RGB}{242, 242, 242} % Light gray for backgrounds
+% Define a consistent color palette with semantic naming
+\definecolor{CDOSRPrimary}{RGB}{0, 103, 149}     % Primary brand color (DeepSkyBlue4)
+\definecolor{CDOSRSecondary}{RGB}{224, 246, 253} % Secondary brand color (LightCyan1)
+\definecolor{CDOSRAccent}{RGB}{192, 0, 0}        % Accent color for emphasis (Red)
+\definecolor{CDOSRText}{RGB}{51, 51, 51}         % Standard text color (Dark gray)
+\definecolor{CDOSRBackground}{RGB}{242, 242, 242} % Background color (Light gray)
+\definecolor{CDOSRSuccess}{RGB}{0, 128, 0}       % Success indicators
+\definecolor{CDOSRWarning}{RGB}{255, 140, 0}     % Warning indicators
+\definecolor{CDOSRError}{RGB}{178, 34, 34}       % Error indicators
 
 % Provide aliases for backward compatibility
 \colorlet{DeepSkyBlue4}{CDOSRPrimary}
@@ -82,7 +89,7 @@
   filecolor=CDOSRPrimary,
   urlcolor=CDOSRPrimary,
   citecolor=CDOSRPrimary,
-  pdftitle={CanSat Competition Report},
+  pdftitle={CDOSR CanSat 2025 - Preliminary Design Report},
   pdfauthor={CoderDojo Oradea Space Robotics},
   pdfsubject={CanSat Report},
   pdfkeywords={CanSat, Space, Robotics, Satellite, Education}
@@ -103,25 +110,25 @@
 
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 
-% Set page style
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L,R]{\thepage}
-\fancyhead[R]{\textbf{\leftmark}}
-\fancyhead[LO]{\textbf{\rightmark}}
+% % Set page style
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[L,R]{\thepage}
+% \fancyhead[R]{\textbf{\leftmark}}
+% \fancyhead[LO]{\textbf{\rightmark}}
 
-% Plain page style (for first pages of chapters)
-\fancypagestyle{plain}{%
-  \fancyhf{}%
-  \renewcommand{\headrulewidth}{0pt}% Remove header rule
-  \renewcommand{\footrulewidth}{0pt}% Remove footer rule
-  \fancyhead[L]{\includegraphics[scale=0.15]{img_CDOSR.png}}
-  \fancyhead[C]{\raisebox{1.5\height}{\centerheadtext}}
-  \fancyhead[R]{\includegraphics[scale=0.016]{img_CANSAT_RO.png}}
-  \fancyhead[C]{\HruleCanSat[CDOSRPrimary]{5pt}{-15pt}{1.5pt}}
-  \fancyfoot[C]{\HruleCanSat[CDOSRPrimary]{5pt}{2pt}{1.5pt}\includegraphics[scale=0.115]{images/template/img_Cansats_in_europe.png}}
-  \fancyfoot[R]{\textbf{\thepage}}%
-}
+% % Plain page style (for first pages of chapters)
+% \fancypagestyle{plain}{%
+%   \fancyhf{}%
+%   \renewcommand{\headrulewidth}{0pt}% Remove header rule
+%   \renewcommand{\footrulewidth}{0pt}% Remove footer rule
+%   \fancyhead[L]{\includegraphics[scale=0.15]{img_CDOSR.png}}
+%   \fancyhead[C]{\raisebox{1.5\height}{\centerheadtext}}
+%   \fancyhead[R]{\includegraphics[scale=0.016]{img_CANSAT_RO.png}}
+%   \fancyhead[C]{\HruleCanSat[CDOSRPrimary]{5pt}{-15pt}{1.5pt}}
+%   \fancyfoot[C]{\HruleCanSat[CDOSRPrimary]{5pt}{2pt}{1.5pt}\includegraphics[scale=0.115]{images/template/img_Cansats_in_europe.png}}
+%   \fancyfoot[R]{\textbf{\thepage}}%
+% }
 
 \AtBeginDocument{
   \pagestyle{empty}
@@ -172,17 +179,12 @@
     \end{titlepage}
 }
 
-\newcommand{\cansatstyle}{
-  \setlength{\headheight}{36.58205pt}
-  \addtolength{\topmargin}{-24.58205pt}
-}
 
 %% ============================================================================
 %% PATH MANAGEMENT
 %% ============================================================================
 
-% Set default image paths
-\graphicspath{{images/}{images/template/}{images/diagrams/}{images/photos/}{icons/}{images/cdr/}{images/pdr/}}
+
 
 % Command to set custom image paths
 \newcommand{\setcansatimagepaths}[1]{%
@@ -197,3 +199,4 @@
 \IfFileExists{./styles/CDOSR_Boxes.sty}{\RequirePackage{./styles/CDOSR_Boxes}}{}
 \IfFileExists{./styles/CDOSR_Bibliography}{\RequirePackage{./styles/CDOSR_Bibliography}}{}
 \IfFileExists{./styles/CDOSR_Draft}{\RequirePackage{./styles/CDOSR_Draft}}{}
+\IfFileExists{./styles/CDOSR_Headers}{\RequirePackage{./styles/CDOSR_Headers}}{}

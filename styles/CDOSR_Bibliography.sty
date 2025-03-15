@@ -9,7 +9,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{CDOSR_Bibliography}[2025/03/11 v1.0 CanSat Bibliography Styles]
 
-\RequirePackage[style=numeric,sorting=none]{biblatex}
+\RequirePackage[backend=biber,style=ieee,sorting=none,style=numeri]{biblatex}
+
 
 %% ============================================================================
 %% BIBLIOGRAPHY CONFIGURATION
@@ -25,4 +26,8 @@
 }
 
 % Set bibliography font size
-\renewcommand*{\bibfont}{\small}
+\renewcommand*{\bibfont}
+
+% Custom IEEE-style formatting tweaks
+\DeclareFieldFormat{journaltitle}{\textit{#1}}
+\DeclareFieldFormat{title}{\textquote{#1}}

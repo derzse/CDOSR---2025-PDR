@@ -1,0 +1,491 @@
+\input{metadata}
+\input{config}
+\documentclass[11pt]{article}
+\usepackage{CDOSR_CanSat}
+
+\input{document_settings}
+
+% Additional packages for the branding manual
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{calc}
+
+% Define the CDOSR colors from the color palette
+\definecolor{CDOSRPrimary}{RGB}{0, 103, 149}     % DeepSkyBlue4 #006795
+\definecolor{CDOSRSecondary}{RGB}{224, 246, 253} % LightCyan1 #e0f6fd
+\definecolor{CDOSRAccent}{RGB}{192, 0, 0}        % Red #c00000
+\definecolor{CDOSRText}{RGB}{51, 51, 51}         % Dark gray #333333
+\definecolor{CDOSRBackground}{RGB}{242, 242, 242} % Light gray #f2f2f2
+\definecolor{CDOSRBlack}{RGB}{0, 0, 0}            % Black #000000
+\definecolor{CDOSROrange}{RGB}{255, 140, 0}       % Orange #ff8c00
+\definecolor{CDOSRDarkRed}{RGB}{178, 34, 34}      % FireBrick #b22222
+\definecolor{CDOSRWhite}{RGB}{255, 255, 255}      % White #ffffff
+
+% Custom command for color swatches that works with XeLaTeX
+\newcommand{\colorswatch}[5]{%
+\begin{tcolorbox}[
+  colback=#1,
+  colframe=black,
+  coltext=#2,
+  width=0.95\linewidth,
+  arc=0mm,
+  boxrule=0.5pt
+]
+  \textbf{#3}\\
+  RGB: #4\\
+  HEX: \#\texttt{#5}\\
+  Name: \texttt{#1}
+\end{tcolorbox}
+}
+
+% Custom commands for typography examples
+\newcommand{\fontsample}[2]{%
+\begin{tcolorbox}[
+  colback=white,
+  colframe=CDOSRPrimary,
+  width=0.95\linewidth,
+  arc=2mm,
+  boxrule=0.5pt
+]
+  \textbf{#1}\\
+  #2\\
+  \\
+  % \vspace{0.3cm}
+  {\sffamily
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+  abcdefghijklmnopqrstuvwxyz\\
+  0123456789
+  }
+\end{tcolorbox}
+}
+
+\title{CoderDojo Oradea Space Robotics\\Branding Manual}
+\author{CDOSR Team}
+\date{\today}
+
+\begin{document}
+
+\cansattitle{Branding Manual}{img_CDOSR.png}{img_CANSAT_RO.png}
+
+\newpage
+\tableofcontents
+\pagestyle{plain}
+
+\newpage
+\section{Introduction}
+
+This branding manual establishes the official visual identity for CoderDojo Oradea Space Robotics (CDOSR). Consistent use of these brand elements will help build recognition and credibility for our team as we participate in the CanSat competition and related space technology programs.
+
+The CDOSR team represents CoderDojo Oradea in space and robotics technologies, specifically focusing on CanSat competitions. Our visual identity reflects our commitment to education, innovation, and excellence in space science.
+
+This document provides comprehensive guidelines for the use of our logo, colors, typography, and document templates. Following these standards ensures that all materials produced by or for CDOSR maintain a consistent, professional appearance that reinforces our brand identity.
+
+\section{Logo}
+
+\subsection{Primary Logo}
+
+The CDOSR primary logo represents our team's identity and should be used as the main visual identifier on all official communications and materials.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4cm]{img_CDOSR.png}
+    \caption{\small{CDOSR Primary Logo}}
+    \label{fig:primary-logo}
+\end{figure}
+
+\subsection{Secondary Logos}
+
+In addition to our primary logo, CDOSR uses the Romanian CanSat Competition logo as a secondary visual element, especially in competition documentation.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=4cm]{img_CANSAT_RO.png}
+    \caption{\small{Romanian CanSat Competition Logo}}
+    \label{fig:secondary-logo}
+\end{figure}
+
+\subsection{Logo Usage Guidelines}
+
+When using the CDOSR logo, please adhere to the following guidelines:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Maintain clear space around the logo of at least 1/4 of the logo's height
+    \item Do not stretch, distort, or change the proportions of the logo
+    \item Do not change the colors of the logo unless using an approved monochrome version
+    \item Do not place the logo on backgrounds that reduce legibility
+    \item Minimum reproduction size: 1.5 cm in height for print, 100 pixels for digital
+\end{itemize}
+
+\section{Color Palette}
+
+The CDOSR color palette consists of primary, secondary, and accent colors that reflect our identity as a space robotics team. These colors should be used consistently across all communications and materials.
+
+\subsection{Primary Colors}
+
+These colors form the core of our visual identity and should be dominant in all CDOSR materials.
+
+\begin{multicols}{2}
+    \colorswatch{CDOSRPrimary}{CDOSRBlack}{Deep Sky Blue}{0, 103, 149}{006795}
+    
+    \columnbreak
+    
+    \colorswatch{CDOSRSecondary}{CDOSRBlack}{Light Cyan}{224, 246, 253}{E0F6FD}
+\end{multicols}
+
+\subsection{Accent Colors}
+
+Accent colors should be used sparingly to highlight important information or create visual interest.
+
+\begin{multicols}{2}
+    \colorswatch{CDOSRAccent}{CDOSRBlack}{Red}{192, 0, 0}{C00000}
+    
+    \columnbreak
+    
+    \colorswatch{CDOSROrange}{CDOSRBlack}{Orange}{255, 140, 0}{FF8C00}
+\end{multicols}
+
+\subsection{Neutral Colors}
+
+Neutral colors provide balance and should be used for body text and backgrounds.
+
+\begin{multicols}{2}
+    \colorswatch{CDOSRText}{CDOSRBackground}{Dark Gray}{51, 51, 51}{333333}
+    
+    \columnbreak
+    
+    \colorswatch{CDOSRBackground}{CDOSRBlack}{Light Gray}{242, 242, 242}{F2F2F2}
+\end{multicols}
+
+\begin{multicols}{2}
+    \colorswatch{CDOSRBlack}{CDOSRBackground}{Black}{0, 0, 0}{000000}
+    
+    \columnbreak
+    
+    \colorswatch{White}{CDOSRBlack}{CDOSRWhite}{255, 255, 255}{FFFFFF}
+\end{multicols}
+
+\subsection{Color Usage Guidelines}
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Deep Sky Blue should be used for headers, primary buttons, and highlighted elements
+    \item Light Cyan is ideal for backgrounds, panels, and secondary elements
+    \item Red should be used sparingly for warnings, errors, or critical information
+    \item Orange can be used for call-to-actions and secondary accents
+    \item Dark Gray is the standard color for body text
+    \item Light Gray works well for backgrounds and dividers
+    \item White should be used for text on dark backgrounds and for document backgrounds
+\end{itemize}
+
+\section{Typography}
+
+\subsection{Primary Fonts}
+
+CDOSR uses Helvetica (or Arial when Helvetica is unavailable) as our primary font family for most communications. For technical documents and presentations, we maintain consistency by using these fonts across all materials.
+
+\fontsample{Helvetica/Arial}{Used for all headers and body text}
+
+\subsection{Typography Guidelines}
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Headers should use Helvetica Bold
+    \item Body text should use Helvetica Regular
+    \item Recommended font sizes:
+    \begin{itemize}
+        \item Large headers: 18-24pt
+        \item Section headers: 14-16pt
+        \item Body text: 11-12pt
+        \item Captions and footnotes: 9-10pt
+    \end{itemize}
+    \item Line spacing should be between 1.15 and 1.5 times the font size
+    \item Text should be left-aligned except for titles, which may be centered
+\end{itemize}
+
+\section{Document Templates}
+
+\subsection{LaTeX Structure}
+
+The CDOSR team uses LaTeX for all technical documentation, with a standardized structure based on the CDOSR\_CanSat package. This ensures consistency across all competition documents.
+
+\begin{tcolorbox}[
+  colback=CDOSRBackground,
+  colframe=CDOSRPrimary,
+  width=0.95\linewidth,
+  arc=2mm,
+  boxrule=0.5pt
+]
+\begin{verbatim}
+\input{metadata}
+\input{config}
+\documentclass[11pt]{article}
+\usepackage{CDOSR_CanSat}
+
+\input{document_settings}
+
+\cansatstyle
+
+\title{Document Title}
+\author{Team: CDOSR (CoderDojo Space Robotics Oradea)}
+\date{\today}
+
+\begin{document}
+
+\cansattitle{Document Title}{img_CDOSR.png}{img_CANSAT_RO.png}
+
+\newpage
+\tableofcontents
+\pagestyle{plain}
+
+\newpage
+\section{Section Title}
+\subsection{Subsection Title}
+...
+
+\end{document}
+\end{verbatim}
+\end{tcolorbox}
+
+\subsection{Style Modules}
+
+The CDOSR LaTeX style system is modular, with separate style files for different document elements:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item \textbf{CDOSR\_CanSat.sty}: Core style file with basic settings
+    \item \textbf{CDOSR\_Tables.sty}: Table formatting and styles
+    \item \textbf{CDOSR\_Figures.sty}: Figure and image handling
+    \item \textbf{CDOSR\_Math.sty}: Mathematical notation and units
+    \item \textbf{CDOSR\_Lists.sty}: List and enumeration formatting
+    \item \textbf{CDOSR\_Boxes.sty}: Colored boxes and environments
+    \item \textbf{CDOSR\_Bibliography.sty}: Citation and reference styles
+    \item \textbf{CDOSR\_Draft.sty}: Draft mode with watermarks and notes
+\end{itemize}
+
+\subsection{Headers and Footers}
+
+All CDOSR documents use standardized headers and footers:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Headers include page numbers and section titles
+    \item First pages of sections use the plain page style with logo placement
+    \item Footers include horizontal rules and competition identifiers
+\end{itemize}
+
+\section{Visual Elements}
+
+\subsection{Boxes and Containers}
+
+CDOSR documents use colored boxes for highlighting important information:
+
+\begin{tcolorbox}[
+  colback=CDOSRSecondary!50,
+  colframe=CDOSRPrimary,
+  width=0.95\linewidth,
+  arc=2mm,
+  boxrule=0.5pt,
+  title=Example Box
+]
+This is an example of a colored box used to highlight important information. The primary color is used for the frame, while a lighter shade of the secondary color is used for the background.
+\end{tcolorbox}
+
+\subsection{Icons}
+
+FontAwesome icons are used throughout CDOSR documents to visually enhance content:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt]
+    \item[\faTasks] Task lists and action items
+    \item[\faFlask] Testing procedures and experiments
+    \item[\faHourglass] Time durations and schedules
+    \item[\faCheckSquare] Acceptance criteria and completions
+    \item[\faCogs] Technical specifications and details
+    \item[\faGraduationCap] Educational content and background
+    \item[\faEdit] Contributions and responsibilities
+    \item[\faMicroscope] Field of work and role assignments
+\end{itemize}
+
+\subsection{Tables}
+
+Tables in CDOSR documents follow a consistent style with colored headers and alternating row colors:
+
+\begin{table}[h]
+\centering
+\arrayrulecolor{CDOSRPrimary}
+\begin{tabular}{>{\centering\arraybackslash}p{4cm}p{7cm}}
+\hline
+\rowcolor{CDOSRPrimary}
+\textbf{\color{white!50}{Component}} & \textbf{\color{white!50}{Description}} \\
+\hline
+Header row & Blue background with white text \\
+\rowcolor{CDOSRSecondary!30}
+Alternating row & Light blue background for easier reading \\
+Standard row & White background with dark text \\
+\rowcolor{CDOSRSecondary!30}
+Footer row & May use light blue background for emphasis \\
+\hline
+\end{tabular}
+\caption{\small{Table styling example for CDOSR documents}}
+\end{table}
+
+\section{Digital Applications}
+
+% \subsection{Website}
+
+% The CDOSR website should follow these guidelines:
+
+% \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+%     \item Primary background: White
+%     \item Navigation: CDOSRPrimary (Deep Sky Blue)
+%     \item Headings: CDOSRPrimary
+%     \item Body text: CDOSRText (Dark Gray)
+%     \item Accent elements: CDOSRAccent (Red) or CDOSROrange (Orange)
+%     \item Use the primary logo in the header
+%     \item Maintain consistent typography using Helvetica or Arial
+% \end{itemize}
+
+\subsection{Social Media}
+
+For social media profiles and posts:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Use the primary logo as profile pictures
+    \item Header images should incorporate the CDOSR colors
+    \item Apply the CDOSR color palette to all graphics
+    \item Maintain consistent typography
+    \item Include the team name and competition name in descriptions
+\end{itemize}
+
+\subsection{Presentations}
+
+PowerPoint or similar presentations should follow these guidelines:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Title slides: CDOSRPrimary background with white text
+    \item Content slides: White background with CDOSRText for body text
+    \item Headings: CDOSRPrimary
+    \item Accent elements: CDOSRAccent or CDOSROrange
+    \item Include the CDOSR logo in the corner of each slide
+    \item Use Helvetica or Arial fonts throughout
+\end{itemize}
+
+\section{Team Merchandise and Apparel}
+
+\subsection{T-shirts and Uniforms}
+
+Team T-shirts and uniforms should be designed according to these guidelines:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Primary color: CDOSRPrimary (Deep Sky Blue)
+    \item Secondary color: White or CDOSRSecondary (Light Cyan)
+    \item Logo placement: Center chest or left breast
+    \item Team member names: Back upper center
+    \item Competition details: Back lower center
+    \item Sponsor logos (if applicable): Sleeve or back
+\end{itemize}
+
+\subsection{Promotional Materials}
+
+For banners, posters, and other promotional materials:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item Maintain consistency with the CDOSR color palette
+    \item Position the logo prominently
+    \item Use Helvetica or Arial fonts
+    \item Include the team name and competition details
+    \item Feature high-quality images of the team and projects
+\end{itemize}
+
+\section{Application Examples}
+
+\subsection{Technical Report Cover}
+
+\begin{tcolorbox}[
+  colback=white,
+  colframe=CDOSRPrimary,
+  width=0.95\linewidth,
+  arc=2mm,
+  boxrule=0.5pt
+]
+\begin{center}
+\includegraphics[width=4cm]{img_CDOSR.png}
+
+\vspace{0.5cm}
+\textbf{\Large Technical Report}
+\vspace{0.25cm}
+
+\textbf{CoderDojo Oradea Space Robotics}
+
+\vspace{0.25cm}
+Romanian CanSat Competition 2025
+\end{center}
+\end{tcolorbox}
+
+\subsection{Team Identification Badge}
+
+\begin{tcolorbox}[
+  colback=CDOSRPrimary,
+  colframe=CDOSRBlack,
+  width=0.4\linewidth,
+  arc=2mm,
+  boxrule=0.5pt
+]
+\begin{center}
+\textcolor{white}{\textbf{\Large TEAM CDOSR}}
+
+\vspace{0.25cm}
+\includegraphics[width=2cm]{img_CDOSR.png}
+
+\vspace{0.25cm}
+\textcolor{white}{CoderDojo Oradea Space Robotics}
+
+\vspace{0.1cm}
+\textcolor{white}{CanSat Competition 2025}
+\end{center}
+\end{tcolorbox}
+
+\section{Implementation Guidelines}
+
+\subsection{File Formats and Resources}
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item The CDOSR logo is available in the following formats:
+    \begin{itemize}
+        \item PNG with transparent background (for digital use)
+        \item SVG vector format (for scalable applications)
+        \item PDF vector format (for print applications)
+    \end{itemize}
+    \item Color swatches are available in:
+    \begin{itemize}
+        \item RGB (for digital applications)
+        \item CMYK (for print applications)
+        \item HEX (for web applications)
+    \end{itemize}
+    \item LaTeX templates are available in the team's repository
+\end{itemize}
+
+\subsection{Quality Control}
+
+To maintain brand consistency:
+
+\begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+    \item All official communications should be reviewed by the team leader or designee
+    \item Technical documents should use the official LaTeX templates
+    \item Digital materials should be tested on multiple platforms to ensure consistency
+    \item Print materials should be proofed before final production
+\end{itemize}
+
+% \section{Contact Information}
+
+% For questions regarding the use of CDOSR brand elements, please contact:
+
+% \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
+%     \item Team Leader: Antonio Laza
+%     \item Email: \texttt{contact@cdosr.ro}
+%     \item Website: \texttt{www.cdosr.ro}
+% \end{itemize}
+
+\end{document}

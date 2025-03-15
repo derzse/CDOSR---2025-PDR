@@ -38,3 +38,16 @@
   \end{tabular}
   \end{table}
 }
+
+\newcommand{\standardTable}[3]{%
+  \begin{table}[htbp]
+    \centering
+    \arrayrulecolor{CDOSRPrimary}
+    \caption{\small{#1}}
+    \begin{tabular}{#2}
+    \hline
+    \rowcolor{CDOSRPrimary}
+    #3
+    \end{tabular}
+  \end{table}
+}

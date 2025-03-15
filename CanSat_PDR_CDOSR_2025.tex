@@ -1,33 +1,58 @@
+\input{metadata}
 \input{config}
 \documentclass[11pt]{article}
 \usepackage{CDOSR_CanSat}
+\usepackage{CDOSR_Headers}
+\input{acronyms}
 
-\cansatstyle
+\input{document_settings}
 
-\title{Preliminary Design Report}
-\author{Team: CDOSR (CoderDojo Space Robotics Oradea)}
-\date{\today}
+\title{\documentTitle}
+\author{Team: \documentTeam}
+\date{\documentDate}
 
 \begin{document}
 
-\cansattitle{Preliminary Design Report}{img_CDOSR.png}{img_CANSAT_RO.png}
+\cansattitle{\documentTitle}{img_CDOSR.png}{img_CANSAT_RO.png}
 
 
 \newpage
+\firstpagestyle
+first page text
+\newpage
+\footerpagestyle
+\newpage
+text1
+\newpage
+\firstpagestyle
+\newpage
+text2
+\newpage
+\appendixpagestyle
+\newpage
+\firstpagestyle
+\newpage
+text3
+\newpage
+
 
 \tableofcontents
-\pagestyle{plain}
+\clearpage
+% \pagestyle{cdosrpage}
 
 \newpage
-\inputSectionOne{section_1}
-\inputSectionTwo{section_2}
-% \inputSectionOne{section_1}
-\inputSectionFour{section_4}
-\inputSectionFive{section_5}
-\inputSectionSix{section_6}
-\inputSectionSeven{section_7}
+\inputSection{1}{section_1}
+\inputSection{2}{section_2}
+% \inputSection{3}{section_3}
+\inputSection{4}{section_4}
+\inputSection{5}{section_5}
+\inputSection{6}{section_6}
+\inputSection{7}{section_7}
 
 \theendnotes
+
+\addbibresource{bibliography.bib}
+\printbibliography
 
 \appendix
 \newpage
@@ -51,5 +76,9 @@
 \input{sensor_testing}
 \newpage
 \input{mechanical_testing}
+
+\printglossary[type=\acronymtype,title=Acronyms]
+\printglossary[title=Glossary]
+
 
 \end{document}
