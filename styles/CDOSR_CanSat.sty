@@ -188,6 +188,21 @@
 
 
 
+
+
+\definecolor{high}{RGB}{144, 238, 144}  % Light green for high scores
+\definecolor{medium}{RGB}{255, 223, 128} % Light orange for medium scores
+\definecolor{low}{RGB}{255, 153, 153}    % Light red for low scores
+
+% Function for cell coloring
+\newcommand{\cellcolorbasedonvalue}[1]{
+    \ifnum#1>4 \cellcolor{high}#1
+    \else\ifnum#1=4 \cellcolor{medium}#1
+    \else\cellcolor{low}#1
+    \fi\fi
+}
+
+
 % Command to set custom image paths
 \newcommand{\setcansatimagepaths}[1]{%
   \graphicspath{#1}
