@@ -1,13 +1,10 @@
-\makeatletter
-\def\input@path{{./styles/}}
-\makeatother
-
+\input{metadata}
+\input{config}
 \documentclass[11pt]{article}
 \usepackage{CDOSR_CanSat}
-\cansatstyle
+% \cansatstyle
 
-\title{Guidelines for the Preliminary Report
-
+\title{Guidelines for the Preliminary Report\\
 And Design Document
 }
 \author{Team: Team_name}
@@ -15,7 +12,8 @@ And Design Document
 
 \begin{document}
 
-\cansattitle{Preliminary Design Report}{img_CDOSR.png}{img_CANSAT_RO.png}
+% \cansattitle{Preliminary Design Report}{img_CDOSR.png}{img_CANSAT_RO.png}
+\cansattitle{\documentTitle}{./styles/img_CDOSR.png}{img_CANSAT_RO.png}
 
 \tableofcontents
 \pagestyle{plain}

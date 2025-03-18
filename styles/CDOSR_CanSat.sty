@@ -39,7 +39,6 @@
 \RequirePackage{helvet}
 \RequirePackage{array, adjustbox, colortbl}
 \RequirePackage{siunitx}
-\RequirePackage{hyperref}
 \RequirePackage{endnotes,lipsum}
 \RequirePackage{hyperendnotes}
 \RequirePackage{tabularx}
@@ -52,6 +51,7 @@
 \RequirePackage{zref-savepos}
 \RequirePackage{xifthen} % Required for \isempty test
 \RequirePackage{ulem}
+\RequirePackage{booktabs}
 \RequirePackage{pdflscape}
 \fontfamily{phv}\selectfont
 
@@ -71,12 +71,14 @@
 \definecolor{CDOSRSuccess}{RGB}{0, 128, 0}       % Success indicators
 \definecolor{CDOSRWarning}{RGB}{255, 140, 0}     % Warning indicators
 \definecolor{CDOSRError}{RGB}{178, 34, 34}       % Error indicators
+\definecolor{CDOSRDimGray}{RGB}{102, 102, 102}
+
 
 % Provide aliases for backward compatibility
 \colorlet{DeepSkyBlue4}{CDOSRPrimary}
 \colorlet{LightCyan1}{CDOSRSecondary}
-\definecolor{gray}{rgb}{0.60, 0.60, 0.60}
-\definecolor{dgray}{rgb}{0.40, 0.40, 0.40}
+\colorlet{dgray}{CDOSRDimGray}
+\definecolor{gray}{RGB}{153, 153, 153}
 
 %% ============================================================================
 %% HYPERREF CONFIGURATION
@@ -192,10 +194,21 @@
 }
 
 % Load additional modules if available
-\IfFileExists{./styles/CDOSR_Tables.sty}{\RequirePackage{./styles/CDOSR_Tables}}{}
-\IfFileExists{./styles/CDOSR_Figures.sty}{\RequirePackage{./styles/CDOSR_Figures}}{}
-\IfFileExists{./styles/CDOSR_Math.sty}{\RequirePackage{./styles/CDOSR_Math}}{}
-\IfFileExists{./styles/CDOSR_Lists.sty}{\RequirePackage{./styles/CDOSR_Lists}}{}
+\IfFileExists{./styles/CDOSR_Tables.sty}{
+  \RequirePackage{./styles/CDOSR_Tables}
+}{
+  \PackageWarning{CDOSR_CanSat}{CDOSR_Tables.sty not found. Tables will use default styles.}
+}
+\IfFileExists{./styles/CDOSR_Figures.sty}{
+  \RequirePackage{./styles/CDOSR_Figures}
+}{
+  \PackageWarning{CDOSR_CanSat}{CDOSR_Figures.sty not found. Figures will use default styles.}
+}
+\IfFileExists{./styles/CDOSR_Math.sty}{
+  \RequirePackage{./styles/CDOSR_Math}
+}{
+  \PackageWarning{CDOSR_CanSat}{CDOSR_Math.sty not found. Math will use default styles.}
+}\IfFileExists{./styles/CDOSR_Lists.sty}{\RequirePackage{./styles/CDOSR_Lists}}{}
 \IfFileExists{./styles/CDOSR_Boxes.sty}{\RequirePackage{./styles/CDOSR_Boxes}}{}
 \IfFileExists{./styles/CDOSR_Bibliography}{\RequirePackage{./styles/CDOSR_Bibliography}}{}
 \IfFileExists{./styles/CDOSR_Draft}{\RequirePackage{./styles/CDOSR_Draft}}{}

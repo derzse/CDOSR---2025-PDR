@@ -2,8 +2,27 @@
 \input{config}
 \documentclass[11pt]{article}
 \usepackage{CDOSR_CanSat}
-\usepackage{CDOSR_Headers}
+% \usepackage{./styles/CDOSR_CanSat}
+% \usepackage{CDOSR_Headers}
+\usepackage{./styles/CDOSR_Headers}
 \input{acronyms}
+
+% \usepackage{xcolor}
+% \usepackage{colortbl}
+% \usepackage{pgfplots}
+% Define colors based on score
+\definecolor{high}{RGB}{144, 238, 144}  % Light green for high scores
+\definecolor{medium}{RGB}{255, 223, 128} % Light orange for medium scores
+\definecolor{low}{RGB}{255, 153, 153}    % Light red for low scores
+
+% Function for cell coloring
+\newcommand{\cellcolorbasedonvalue}[1]{
+    \ifnum#1>4 \cellcolor{high}#1
+    \else\ifnum#1=4 \cellcolor{medium}#1
+    \else\cellcolor{low}#1
+    \fi\fi
+}
+
 
 \input{document_settings}
 
@@ -16,24 +35,6 @@
 \cansattitle{\documentTitle}{img_CDOSR.png}{img_CANSAT_RO.png}
 
 
-\newpage
-\firstpagestyle
-first page text
-\newpage
-\footerpagestyle
-\newpage
-text1
-\newpage
-\firstpagestyle
-\newpage
-text2
-\newpage
-\appendixpagestyle
-\newpage
-\firstpagestyle
-\newpage
-text3
-\newpage
 
 
 \tableofcontents
@@ -51,8 +52,8 @@ text3
 
 \theendnotes
 
-\addbibresource{bibliography.bib}
-\printbibliography
+% \addbibresource{bibliography.bib}
+% \printbibliography
 
 \appendix
 \newpage
@@ -60,7 +61,7 @@ text3
 \appendix
 \addcontentsline{toc}{section}{Appendices}
 \section*{Appendices}
-% \section{Time Management - Gantt Chart}\label{A1}
+\section{Time Management - Gantt Chart}\label{A1} \includegraphics[width=0.9\textwidth]{images/pdr/Gantt.eps}
 
 % Input appendix files
 \input{mission_milestones}

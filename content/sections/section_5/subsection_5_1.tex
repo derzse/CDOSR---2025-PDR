@@ -10,49 +10,91 @@ The risk analysis section is an essential part of any project plan. In this sect
 \item \textbf{Budget constraints}: Such projects are often subject to budget constraints. Ensure that the project is feasible within the available budget and prioritize mission objectives accordingly.
 \end{itemize}
 
-\subsection{Resource estimation}
-To ensure that the project is completed successfully within the given budget and timeframe, it is crucial to perform a thorough estimation of the required resources. This includes identifying the necessary materials, equipment, and team members needed to complete the project, as well as the associated costs and time requirements. 
+\subsection{Secondary Mission}
+For our secondary mission, the design of the air sampling system is critical to ensuring reliable data collection. We must carefully select the sampling mechanism, storage method, and activation process to capture airborne particles effectively at different altitudes. Factors such as contamination prevention, airflow control, and synchronization with environmental sensors must be considered to guarantee accurate results. A well-planned system will ensure that our collected samples provide meaningful insights into atmospheric bioaerosol distribution. The following table is used to decide between the possible systems for our secondary mission.
 
-By performing a detailed resource estimation, the project team can effectively plan and allocate resources to ensure that the project is completed on time, within budget, and to the desired quality standards. 
 
-Below is a breakdown of the resources required for the CanSat project:
+\begin{table}[htbp]
+\centering
+\arrayrulecolor{DeepSkyBlue4}
+\begin{tabular}{l c c c}
+\rowcolor{DeepSkyBlue4}
+\hline
+\multicolumn{1}{|c|}{\textbf{\color{white!50}{Criteria}}} & \textbf{\color{white!50}{Passive (sCANSATi)}} & \textbf{\color{white!50}{Filter-Based Sequential}} & \textbf{\color{white!50}{Impaction Collection}} \\
+\hline
+Mechanical Simplicity & 1.00 & 0.60 & 0.60 \\
+\rowcolor{CDOSRSecondary!50}Power Efficiency & 0.75 & 0.60 & 0.45 \\
+Scientific Value & 0.40 & 0.60 & 0.80 \\
+\rowcolor{CDOSRSecondary!50}Reliability & 0.75 & 0.60 & 0.45 \\
+Volume/Weight Efficiency & 0.20 & 0.20 & 0.15 \\
+\rowcolor{CDOSRSecondary!50}Altitude Differentiation & 0.10 & 0.40 & 0.30 \\
+Sample Preservation & 0.20 & 0.30 & 0.30 \\
+\rowcolor{CDOSRSecondary!50}Manufacturing Complexity & 0.25 & 0.20 & 0.15 \\
+\hline
+\textbf{Final Score} & \textbf{3.65} & \textbf{3.50} & \textbf{3.20} \\
+\hline
+\end{tabular}
+\caption{Top 3 air sampling methods with individual criteria scores.}
+\label{tab:top_methods_details}
+\end{table}
+
+
+
+
+\subsection{Resource Estimation}
+
+To successfully complete the CanSat project within the given budget and timeframe, it is essential to estimate and allocate resources efficiently. This includes identifying required materials, equipment, and team members while accounting for costs and time constraints. The project demands a balance between high-performance components, efficient software integration, and rigorous testing to ensure mission success.
+
+Careful planning will allow the team to optimize resource usage, prevent unexpected delays, and maintain a structured workflow. Below is a breakdown of the resources required for the CanSat project:
+
 \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
-\item Materials and components:
+
+\item Materials and Components:
 \begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Identify and list out all the required materials and components, including a microcontroller, sensors, batteries, antennas, radio modules, lightweight printable plastics, and other miscellaneous parts
-\item Cost of materials can vary depending on the quality and quantity of components required
+\item Essential electronic components, including a microcontroller, environmental sensors (temperature, humidity, pressure, GPS), batteries, antennas, and radio modules.
+\item Air sampling system, consisting of an intake mechanism, filtration unit, and storage chambers.
+\item Material selection considers durability, weight constraints, and environmental conditions.
 \end{itemize}
-\item Tools and equipment:
+
+\item Tools and Equipment:
 \begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Various tools and equipment required, such as multimeters, 3d printers, oscilloscope, soldering station, and other miscellaneous parts
+\item Standard tools such as multimeters, 3D printers, oscilloscopes, and soldering stations for assembly and testing.
+\item Laboratory equipment for post-flight analysis, including microscopes, particle analyzers, or culture materials.
 \end{itemize}
+
 \item Software:
 \begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Programming microcontrollers, designing 3D concepts, and analyzing data collected by the sensors
-\item Using open-source software can significantly reduce the costs associated with software for the project.
-\end{itemize}
-\item Manpower and build time:
-\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Online tools and weekly meetings are used to ensure accuracy
-\item Estimated effort of 630 hours for the entire project.
-\end{itemize}
-\item Testing and validation:
-\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Essential step to ensure the project performs as expected
-\item May include the use of specialized equipment such as a drone or rocket
-\end{itemize}
-\item Shipping, transport, and logistics:
-\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Shipping and logistics costs may need to be factored into the project’s budget
-\item May include shipping materials and components and travel costs for team members to attend the competition
-\end{itemize}
-\item Miscellaneous costs:
-\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
-\item Other costs that may need to be considered when estimating resources for the project
-\end{itemize}
+\item Programming for sensor data acquisition, system control, and telemetry transmission.
+\item Computational tools for analyzing collected data and correlating air sample conditions with environmental factors.
+\item Use of open-source software to optimize costs while maintaining functionality.
 \end{itemize}
 
-In conclusion, it is evident that a successful project outcome is heavily reliant on a proper estimation of resources required to complete the project. Neglecting the factors such as materials, components, tools, equipment, software, testing and validation, shipping and logistics, and other unforeseen costs can lead to budget overruns, delays, and ultimately failure to achieve project objectives.
+\item Manpower and Build Time:
+\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
+\item Structured weekly meetings and online collaboration tools to maintain efficiency.
+\item Detailed planning and prototyping phases to refine the system design.
+\item Estimated total effort: 700+ hours, accounting for development, testing, and analysis.
+\end{itemize}
+
+\item Testing and Validation:
+\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
+\item Comprehensive ground testing to verify system functionality, reliability, and calibration.
+\item Evaluation of air intake efficiency, sample integrity, and contamination control.
+\item Flight testing using drones or other launch systems to simulate real-world conditions.
+\end{itemize}
+
+\item Shipping, Transport, and Logistics:
+\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
+\item Transportation of materials and components, as well as travel logistics for team participation in the competition.
+\item Proper handling and storage of collected air samples for laboratory analysis.
+\end{itemize}
+
+\item Miscellaneous Costs:
+\begin{itemize}[label=\ding{111}, noitemsep, topsep=1pt]
+\item Additional expenses, including unexpected equipment replacements, extended lab access, and specialized testing materials.
+\end{itemize}
+
+\end{itemize}
 
 \subsubsection{Budget}
 
@@ -61,7 +103,7 @@ We conducted thorough research to ensure that our budget aligns with the ideal s
 However, building the CanSat is just a part of the project. Therefore, our budget covers the entire project from start to finish, which can be divided into four main parts: 
 \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
     \item \textbf{Hardware parts}: all the necessary mechanical and electronic/electrical parts required to build both our custom development board and final payload. The cost estimation includes the purchase of a microcontroller, sensors, batteries, antennas, radio modules, lightweight printable plastics, and other miscellaneous parts.
-    \item \textbf{Publicity and Branding}: covers the creation of custom t-shirts to promote our team and the event. In addition to custom t-shirts, we will also invest in creating promotional materials such as flyers, posters, and banners that showcase our team and the mission. These materials will be distributed both digitally and in person to help increase awareness of our project and the competition. Additionally, we will allocate a portion of our budget towards branding efforts such as website design and social media management to maintain a consistent and professional image for our team. Investing in Publicity and Branding will help us build a strong reputation within the community and attract potential sponsors and supporters to our cause.
+    \item \textbf{Publicity and Branding}: covers the creation of custom t-shirts to promote our team and the event. In addition to custom t-shirts, we will also invest in creating promotional materials such as flyers, posters,stickers and banners that showcase our team and the mission. These materials will be distributed both digitally and in person to help increase awareness of our project and the competition. Additionally, we will allocate a portion of our budget towards branding efforts such as website design and social media management to maintain a consistent and professional image for our team. Investing in Publicity and Branding will help us build a strong reputation within the community and attract potential sponsors and supporters to our cause.
     % \item \textbf{Travel Expenses}: includes the transportation costs, with tickets for the team to travel to the Competition Venue. This includes the cost of transportation by train, as well as any necessary local travel expenses.
     \item \textbf{Emergency Funds}: a contingency budget to cover any unforeseen costs that may arise during the project.
 \end{itemize}
@@ -70,33 +112,34 @@ Below is a table that outlines all the anticipated expenses associated with the 
 
 The components required for the project will be purchased from various suppliers such Optimus Digital, Cle\c{s}te.ro, Mouser, TME, Adafruit, and JLCPCB. It is worth noting that the team did not receive any kits from the organizers, and as a result, the team members did all the design and construction of the CanSat.
 
-\subsubsection{External support}
-The successful execution of the CanSat mission relies on the assistance and resources given by different organizations, departments, and companies. We are fortunate to have received sponsorship or in-kind support from the following entities:
+\subsubsection{External Support}
+The successful execution of the CanSat mission relies on the invaluable support and resources provided by various organizations, departments, and companies. We are fortunate to have received sponsorship and in-kind contributions from the following entities:
 \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
-    % \item \textbf{CoderDojo Oradea} has provided substantial financial aid, technical support, and feedback on both hardware and software. This makes them our biggest sponsor so far, allowing us to acquire all of the most expensive components of our CanSat and facilities where we can carry out our activities;
-    \item \textbf{Funda\c{t}ia Comunitar\u{a} Oradea} has generously provided facilities where we can conduct our activities;
-    % \item \textbf{EduTrust} has provided both financial support and working facilities for our team;
-    % \item \textbf{Elektrobit} has provided financial support, access to facilities, equipment, and expertise in Embedded systems;
-    \item \textbf{Depozitul de Tricouri} has agreed to provide customized T-shirts for each team member, which will help us promote our team and the event.
+\item \textbf{Fundaţia Comunitară Oradea} has generously provided the facilities where we can conduct our activities;
+\item \textbf{Depozitul de Tricouri} has kindly agreed to supply customized T-shirts for each team member, helping us promote our team and the event.
 \end{itemize}
+
+This support has been crucial in ensuring the smooth progress of our mission.
 
 
 \subsection{Test plan}
 
-The success of the mission depends on the thorough testing of the system before the launch. This test plan outlines the various tests that will be conducted to ensure that the payload meets the mission objectives and functions properly under different conditions. The tests are categorized into mechanical, software, communication, power, integration, ground station, battery charging, launch, and post-mission tests. The goal of these tests is to ensure that the payload is capable of collecting and transmitting data accurately, and survive the launch and landing phases. In the annex is a roadmap for testing the mission's payload, with general ideas for each test.
+The success of the mission depends on thorough system testing prior to launch. This test plan outlines the various evaluations necessary to ensure that the payload meets mission objectives and operates reliably under various conditions. The tests are divided into categories, including mechanical, software, communication, power, integration, ground station, battery charging, launch, post-mission assessments, and secondary mission-specific tests. Their main goal is to confirm the payload’s ability to accurately collect and transmit data while withstanding the rigors of launch, descent, and landing.
 
-The general test list provides a roadmap for ensuring that the payload meets the competition requirements and can perform its intended mission. However, to ensure the mission's success, conducting more specific tests on its electronics and structure is crucial. These tests will verify that the sensors and instruments are functioning correctly and that the payload's structure can withstand the rigors of launch, landing, and environmental conditions.
+The general test list provides a roadmap for verifying that the payload meets competition requirements and fulfills its core mission. However, to ensure mission success, it is essential to conduct detailed tests on the electronics and structure. These tests will verify that sensors, instruments, and the air sampling system function as expected, while also ensuring that the payload's structure can withstand the stresses of launch, landing, and environmental conditions.
 
-Endurance tests are an essential part of the testing process as they are designed to assess the satellite's ability to withstand the harsh environmental conditions it may encounter during a typical mission. These tests are conducted to ensure that the payload components can withstand the forces of a fall, vibration, shock, and prolonged exposure to G-forces during CanSat transport. Additionally, the endurance tests provide valuable information about the limits of the payload and its performance under different conditions. 
+Endurance tests are particularly crucial, evaluating the payload’s ability to withstand extreme environmental conditions throughout the mission. These tests will ensure that the payload components can endure impacts, vibrations, shocks, and the prolonged exposure to G-forces during transport. Additionally, they will offer valuable insights into the payload's performance and limits under a range of conditions.
 
-By conducting both general and specific tests, the team can be confident that the CanSat is fully functional and prepared for a successful mission.
+For the secondary mission, which involves collecting air samples at various altitudes, we will perform additional tests specific to the sampling system. This includes verifying that the collection system operates efficiently, the Petri dishes remain uncontaminated, and the sensors measure and record data accurately. These tests will also assess the integrity of the air samples and the system's ability to capture, store, and transmit the data to the ground station for later analysis.
+
+By conducting both general and mission-specific tests, including those for the secondary mission, the team will ensure the CanSat is fully operational and ready for a successful mission.
 
 
 \subsection{Time management}
 To keep the project on schedule, we've divided it into phases, from ideation to competition. Currently, we're in the design and prototyping stages, with testing and construction to follow. Details of the testing phase will be defined later. We estimate needing 630 man-hours for the project and have already invested 330. The Gantt chart tracks our progress, helping us adjust plans to meet deadlines. For a detailed timeline, see the provided chart in the Appendix. 
 
 \begin{itemize}[leftmargin=1cm, itemindent=0.25cm, noitemsep, topsep=0pt, label=$\bullet$]
-\item Team formation: 11.10.2023 - 19.11.2023
+\item Team formation: 09.02.2025 - 14.02.2025
 \begin{multicols}{2}[\vspace{-0.75\baselineskip}]
 \begin{itemize}[label=\ding{59}, noitemsep, topsep=2pt]
 \item Think of feasible mission objectives and requirements
@@ -104,7 +147,7 @@ To keep the project on schedule, we've divided it into phases, from ideation to 
 \end{itemize}
 \end{multicols}
 \vspace*{-0.75\baselineskip}
-\item Ideation: 11.10.2023 - 28.04.2024
+\item Ideation: 14.02.2025 - 28.04.2024
 \begin{multicols}{2}[\vspace{-0.75\baselineskip}]
 \begin{itemize}[label=\ding{59}, noitemsep, topsep=2pt]
 \item Documentation writing (PDR, CDR, FDR)
@@ -140,11 +183,11 @@ To keep the project on schedule, we've divided it into phases, from ideation to 
 % \multicolumn{1}{c}{\textbf{\color{white!50}{Major risks}}} & \multicolumn{1}{c}{\textbf{\color{white!50}{Mitigation}}} \\
 % \hline
 % Delays in obtaining mandatory materials and electronic components due to the global semiconductor chip shortage, resulting in unavailability and delivery delays & Place orders for materials and electronic components well in advance, find alternative components and adjust the project timeline accordingly \\
-% \rowcolor{LightCyan1!50}Overtime required for the electrical design part due to thorough testing and prototyping of the onboard circuits before integration into the final design & Create a good electrical schematic and perform exhaustive checks before beginning the physical build to catch any errors \\
+% \rowcolor{CDOSRSecondary!50}Overtime required for the electrical design part due to thorough testing and prototyping of the onboard circuits before integration into the final design & Create a good electrical schematic and perform exhaustive checks before beginning the physical build to catch any errors \\
 % Unforeseen technical difficulties that may require additional troubleshooting time and access to technical guidance from partners & Grant some extra time for troubleshooting and have access to technical guidance from our partners \\
-% \rowcolor{LightCyan1!50}Adverse weather conditions during testing & Analyze the weather status in advance and plan at least one backup day for testing \\
+% \rowcolor{CDOSRSecondary!50}Adverse weather conditions during testing & Analyze the weather status in advance and plan at least one backup day for testing \\
 % CanSat damage during testing due to inappropriate launch sites and lack of safety measures & Carefully choose the launch site when testing the CanSat and ensure that all safety measures are met \\
-% \rowcolor{LightCyan1!50}Recovery failure due to poor GPS transmission and weak buzzer sound & Before launching, ensure that the GPS transmission is strong and the buzzer sound is loud \\
+% \rowcolor{CDOSRSecondary!50}Recovery failure due to poor GPS transmission and weak buzzer sound & Before launching, ensure that the GPS transmission is strong and the buzzer sound is loud \\
 % Team member availability: Unexpected absences or departures of team members could delay the project and lead to workload imbalances & Clear communication and expectations among team members, cross-training team members on critical tasks, and having backup plans for key roles \\
 % \hline
 % \end{tabular}
